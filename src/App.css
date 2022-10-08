@@ -10,6 +10,7 @@
   padding-block: 6px;
   padding-inline: 6px;
   margin-inline: auto;
+  margin-top: 20%;
   height: 28px;
   line-height: 28px;
   display: flex;
@@ -29,4 +30,27 @@
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+}
+
+.firstDiv{
+  margin-inline: auto;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+
+}
+
+.firstDiv h1{
+  font-size: 4rem;
+  
+  
+}
+
+h1 .caption {
+
+  font-size: small;
+  color: gray;
+  
+
 }
