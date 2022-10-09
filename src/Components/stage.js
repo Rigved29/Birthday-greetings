@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import TypeWriter from "typewriter-effect";
+import baloon1 from "../Images/ballon1.svg";
+import baloon2 from "../Images/ballon2.svg";
+import baloon3 from "../Images/ballon3.svg";
 
 const StageAnimation = () => {
   const [searchBar, setSearchBar] = useState(false);
@@ -90,11 +93,85 @@ const StageAnimation = () => {
     },
   };
 
+  const div_4_Variants = {
+    notVisible: { opacity: 0, y: 0 },
+    hidden: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 0,
+      y: 10,
+
+      transition: {
+        delay: 4,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const div_5_Variants = {
+    notVisible: { opacity: 0, y: 0 },
+    hidden: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 0,
+      y: 10,
+
+      transition: {
+        delay: 4,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const div_6_Variants = {
+    notVisible: { opacity: 0, y: 0 },
+    hidden: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 0,
+      y: 10,
+
+      transition: {
+        delay: 4,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const soFirstVariants = {
+    notVisible: { opacity: 0, scale: 5, y: 10 },
+    hidden: { opacity: 1, scale: 5, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: [5, 1, 5],
+      y: 0,
+      transition: { duration: 1, staggerChildren: 2.5, type: "tween" },
+    },
+  };
+
+  const soSecondVariants = {
+    notVisible: { opacity: 0, scale: 5, y: 10 },
+    hidden: { opacity: 1, scale: 5, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: [5, 1, 5],
+      y: 0,
+      transition: {
+        delay: 0.25,
+        duration: 1,
+        staggerChildren: 2.5,
+        type: "tween",
+      },
+    },
+  };
+
   const divOneControls = useAnimation();
   const divTwoControls = useAnimation();
 
   const searchBarDivControls = useAnimation();
   const divThirdControls = useAnimation();
+  const divFourthControls = useAnimation();
+  const divFifthControls = useAnimation();
+  const divSixthControls = useAnimation();
+  const soFirstControls = useAnimation();
+  const soSecondControls = useAnimation();
 
   useEffect(() => {
     const sequence = () => {
@@ -107,7 +184,37 @@ const StageAnimation = () => {
                 searchBarDivControls.start("visible").then(() => {
                   searchBarDivControls.start("hide").then(() => {
                     divThirdControls.start("hidden").then(() => {
-                      divThirdControls.start("visible");
+                      divThirdControls.start("visible").then(() => {
+                        divFourthControls.start("hidden").then(() => {
+                          divFourthControls.start("visible").then(() => {
+                            divFifthControls.start("hidden").then(() => {
+                              divFifthControls.start("visible").then(() => {
+                                divSixthControls.start("hidden").then(() => {
+                                  // divSixthControls.start("visible").then(() => {
+                                  soFirstControls.start("hidden").then(() => {
+                                    soFirstControls
+                                      .start("visible")
+                                      .then(() => {
+                                        soSecondControls
+                                          .start("hidden")
+                                          .then(() => {
+                                            soSecondControls
+                                              .start("visible")
+                                              .then(() => {
+                                                divSixthControls.start(
+                                                  "visible"
+                                                );
+                                              });
+                                          });
+                                      });
+                                  });
+                                  // });
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });
                     });
                   });
                 });
@@ -202,6 +309,101 @@ const StageAnimation = () => {
         >
           That's what I was going to do
         </motion.h1>
+      </motion.div>
+      <motion.div
+        initial="notVisible"
+        animate={divFourthControls}
+        variants={div_4_Variants}
+        className="firstDiv"
+      >
+        <motion.h1
+          initial="hidden"
+          animate="visible"
+          variants={headingVariants}
+        >
+          But then I Stopped
+        </motion.h1>
+      </motion.div>
+      <motion.div
+        initial="notVisible"
+        animate={divFifthControls}
+        variants={div_5_Variants}
+        className="firstDiv"
+      >
+        <motion.h1
+          initial="hidden"
+          animate="visible"
+          variants={headingVariants}
+        >
+          I realised , I wanted to do something{" "}
+          <motion.span
+            initial={{
+              fontWeight: "bold",
+              backgroundColor: "transparent",
+              color: "black",
+            }}
+            animate={{
+              fontWeight: "bold",
+              backgroundColor: ["transparent", "cornflowerblue"],
+              color: ["black", "white"],
+              transition: {
+                delay: 2,
+                duration: 1,
+                staggerChildren: 2.5,
+                type: "tween",
+              },
+            }}
+          >
+            special
+          </motion.span>
+        </motion.h1>
+      </motion.div>
+      <motion.div
+        initial="notVisible"
+        animate={divSixthControls}
+        variants={div_6_Variants}
+        className="firstDiv"
+      >
+        <h1
+        // initial="hidden"
+        // animate="visible"
+        // variants={headingVariants}
+        >
+          <motion.span
+            initial="notVisible"
+            animate={soFirstControls}
+            variants={soFirstVariants}
+          >
+            S
+          </motion.span>
+          <motion.span
+            initial="notVisible"
+            animate={soSecondControls}
+            variants={soSecondVariants}
+          >
+            O
+          </motion.span>
+        </h1>
+      </motion.div>
+      <motion.div className="baloons">
+        <motion.img src={baloon1} alt="baloon1" />
+        <motion.img src={baloon2} alt="baloon1" />
+        <motion.img src={baloon3} alt="baloon1" />
+        <motion.img src={baloon1} alt="baloon1" />
+        <motion.img src={baloon2} alt="baloon1" />
+        <motion.img src={baloon3} alt="baloon1" />
+        <motion.img src={baloon1} alt="baloon1" />
+        <motion.img src={baloon2} alt="baloon1" />
+        <motion.img src={baloon3} alt="baloon1" />
+        <motion.img src={baloon1} alt="baloon1" />
+        <motion.img src={baloon2} alt="baloon1" />
+        <motion.img src={baloon3} alt="baloon1" />
+        <motion.img src={baloon1} alt="baloon1" />
+        <motion.img src={baloon2} alt="baloon1" />
+        <motion.img src={baloon3} alt="baloon1" />
+        <motion.img src={baloon1} alt="baloon1" />
+        <motion.img src={baloon2} alt="baloon1" />
+        <motion.img src={baloon3} alt="baloon1" />
       </motion.div>
     </>
   );
