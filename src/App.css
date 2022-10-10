@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .search-bar{
@@ -55,13 +56,22 @@ h1 .caption {
 
 }
 
+.baloons {
+  position: relative;
+  width: 100%;
+
+}
+
 .baloons img {
   display: inline-block;
   position: absolute;
+  /* width: 600px;
+  height: 600px; */
 }
 
-.baloons img:nth-child(even) {
+/* .baloons img:nth-child(even) {
   left: -10%;
+  
 }
 
 .baloons img:nth-child(odd) {
@@ -70,4 +80,181 @@ h1 .caption {
 
 .baloons img:nth-child(3n + 0) {
   left: 30%;
+} */
+
+.baloons .baloon1{
+
+  left: 25px;
+  
+
+}
+
+
+.baloons .baloon2{
+
+  right: 25px;
+  top: 200px;
+
+}
+
+.baloons .baloon3{
+
+  right: 100px;
+  top: 550px;
+
+}
+
+.baloons .baloon4{
+
+  left: 20px;
+  top: 700px;
+
+}
+
+.baloons .baloon5{
+
+  right: 15px;
+  top: 1060px;
+
+}
+
+
+.baloons .baloon6{
+
+  right: 625px;
+  top: 1200px;
+
+}
+
+.baloons .baloon7{
+
+  left: 125px;
+  top: 1400px;
+
+}
+
+.baloons .baloon8{
+
+  right: 300px;
+  top: 1700px;
+
+}
+
+.baloons .baloon9{
+
+  left: 100px;
+  top: 2000px;
+
+}
+
+.baloons .baloon10{
+
+  right: 15px;
+  top: 2200px;
+
+}
+
+.baloons .baloon11{
+
+  right: 15px;
+  top: 2500px;
+
+}
+
+.baloons .baloon12{
+
+  left: 15px;
+  top: 2800px;
+
+}
+
+.baloons .baloon13{
+
+  right: 15px;
+  top: 3200px;
+
+}
+
+.baloons .baloon14{
+
+  right: 625px;
+  top: 3600px;
+
+}
+
+.baloons .baloon15{
+
+  left: 300px;
+  top: 4000px;
+
+}
+
+.baloons .baloon16{
+
+  left: 500px;
+  top: 4300px;
+
+}
+
+.baloons .baloon17{
+
+  right: 158px;
+  top: 4600px;
+
+}
+
+.baloons .baloon18{
+
+  right: 15px;
+  top: 5000px;
+
+}
+
+.baloons .baloon19{
+
+  left: 15px;
+  top: 5300px;
+
+}
+
+.baloons .baloon20{
+
+  right: 705px;
+  top: 5600px;
+
+}
+
+.baloons .baloon21{
+
+  right: 35px;
+  top: 5900px;
+
+}
+
+.baloons .baloon22{
+
+  left: 150px;
+  top: 6200px;
+
+}
+
+.baloons .baloon23{
+
+  right: 905px;
+  top: 7400px;
+
+}
+
+.baloons .baloon24{
+
+  left: 955px;
+  top: 7700px;
+
+}
+
+.baloons .baloon25{
+
+  left: 745px;
+  top: 8000px;
+
 }

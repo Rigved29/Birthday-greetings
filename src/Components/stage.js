@@ -162,6 +162,61 @@ const StageAnimation = () => {
     },
   };
 
+  const baloonsDivVariants = {
+    notVisible: { opacity: 0 },
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      // y: [1400, -1000],
+    },
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+      type: "tween",
+    },
+  };
+
+  const baloonsEvenVariants = {
+    notVisible: { opacity: 0, y: 1400 },
+    hidden: { opacity: 0, y: 1400 },
+    visible: {
+      opacity: 1,
+      y: [1400, -9000],
+      transition: {
+        // delay: 2.5,
+        duration: 6,
+        type: "tween",
+      },
+    },
+  };
+
+  const baloonsOddVariants = {
+    notVisible: { opacity: 0, y: 1400 },
+    hidden: { opacity: 0, y: 1400 },
+    visible: {
+      opacity: 1,
+      y: [1400, -9000],
+      transition: {
+        // delay: 3.5,
+        duration: 6,
+        type: "tween",
+      },
+    },
+  };
+
+  const baloonsVariants = {
+    notVisible: { opacity: 0, y: 1400 },
+    hidden: { opacity: 0, y: 1400 },
+    visible: {
+      opacity: 1,
+      y: [1400, -9000],
+      transition: {
+        duration: 6,
+        type: "tween",
+      },
+    },
+  };
+
   const divOneControls = useAnimation();
   const divTwoControls = useAnimation();
 
@@ -172,6 +227,10 @@ const StageAnimation = () => {
   const divSixthControls = useAnimation();
   const soFirstControls = useAnimation();
   const soSecondControls = useAnimation();
+  const baloonsDivControls = useAnimation();
+  const baloonsOddControls = useAnimation();
+  const baloonsEvenControls = useAnimation();
+  const baloonsControls = useAnimation();
 
   useEffect(() => {
     const sequence = () => {
@@ -201,9 +260,40 @@ const StageAnimation = () => {
                                             soSecondControls
                                               .start("visible")
                                               .then(() => {
-                                                divSixthControls.start(
-                                                  "visible"
-                                                );
+                                                divSixthControls
+                                                  .start("visible")
+                                                  .then(() => {
+                                                    baloonsDivControls
+                                                      .start("hidden")
+                                                      .then(() => {
+                                                        baloonsDivControls
+                                                          .start("visible")
+                                                          .then(() => {
+                                                            baloonsControls
+                                                              .start("hidden")
+                                                              .then(() => {
+                                                                baloonsControls.start(
+                                                                  "visible"
+                                                                );
+                                                              });
+                                                            baloonsOddControls
+                                                              .start("hidden")
+                                                              .then(() => {
+                                                                baloonsOddControls.start(
+                                                                  "visible"
+                                                                );
+                                                              });
+
+                                                            baloonsEvenControls
+                                                              .start("hidden")
+                                                              .then(() => {
+                                                                baloonsEvenControls.start(
+                                                                  "visible"
+                                                                );
+                                                              });
+                                                          });
+                                                      });
+                                                  });
                                               });
                                           });
                                       });
@@ -385,25 +475,221 @@ const StageAnimation = () => {
           </motion.span>
         </h1>
       </motion.div>
-      <motion.div className="baloons">
-        <motion.img src={baloon1} alt="baloon1" />
-        <motion.img src={baloon2} alt="baloon1" />
-        <motion.img src={baloon3} alt="baloon1" />
-        <motion.img src={baloon1} alt="baloon1" />
-        <motion.img src={baloon2} alt="baloon1" />
-        <motion.img src={baloon3} alt="baloon1" />
-        <motion.img src={baloon1} alt="baloon1" />
-        <motion.img src={baloon2} alt="baloon1" />
-        <motion.img src={baloon3} alt="baloon1" />
-        <motion.img src={baloon1} alt="baloon1" />
-        <motion.img src={baloon2} alt="baloon1" />
-        <motion.img src={baloon3} alt="baloon1" />
-        <motion.img src={baloon1} alt="baloon1" />
-        <motion.img src={baloon2} alt="baloon1" />
-        <motion.img src={baloon3} alt="baloon1" />
-        <motion.img src={baloon1} alt="baloon1" />
-        <motion.img src={baloon2} alt="baloon1" />
-        <motion.img src={baloon3} alt="baloon1" />
+      <motion.div
+        className="baloons"
+        initial="notVisible"
+        animate={baloonsDivControls}
+        variants={baloonsDivVariants}
+      >
+        <motion.img
+          src={baloon1}
+          alt="baloon1"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon1"
+        />
+        <motion.img
+          src={baloon2}
+          alt="baloon2"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon2"
+        />
+        <motion.img
+          src={baloon3}
+          alt="baloon3"
+          initial="notVisible"
+          animate={baloonsControls}
+          variants={baloonsVariants}
+          className="baloon3"
+        />
+        <motion.img
+          src={baloon1}
+          alt="baloon4"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon4"
+        />
+        <motion.img
+          src={baloon2}
+          alt="baloon5"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon5"
+        />
+        <motion.img
+          src={baloon3}
+          alt="baloon6"
+          initial="notVisible"
+          animate={baloonsControls}
+          variants={baloonsVariants}
+          className="baloon6"
+        />
+        <motion.img
+          src={baloon1}
+          alt="baloon7"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon7"
+        />
+        <motion.img
+          src={baloon2}
+          alt="baloon8"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon8"
+        />
+        <motion.img
+          src={baloon3}
+          alt="baloon9"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon9"
+        />
+        <motion.img
+          src={baloon1}
+          alt="baloon10"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon10"
+        />
+        <motion.img
+          src={baloon1}
+          alt="baloon11"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon11"
+        />
+        <motion.img
+          src={baloon3}
+          alt="baloon12"
+          initial="notVisible"
+          animate={baloonsControls}
+          variants={baloonsVariants}
+          className="baloon12"
+        />
+
+        <motion.img
+          src={baloon1}
+          alt="baloon13"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon13"
+        />
+
+        <motion.img
+          src={baloon3}
+          alt="baloon14"
+          initial="notVisible"
+          animate={baloonsControls}
+          variants={baloonsVariants}
+          className="baloon14"
+        />
+
+        <motion.img
+          src={baloon1}
+          alt="baloon15"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon15"
+        />
+        <motion.img
+          src={baloon3}
+          alt="baloon16"
+          initial="notVisible"
+          animate={baloonsControls}
+          variants={baloonsVariants}
+          className="baloon16"
+        />
+
+        <motion.img
+          src={baloon3}
+          alt="baloon17"
+          initial="notVisible"
+          animate={baloonsControls}
+          variants={baloonsVariants}
+          className="baloon17"
+        />
+
+        <motion.img
+          src={baloon1}
+          alt="baloon18"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon18"
+        />
+        <motion.img
+          src={baloon1}
+          alt="baloon19"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon19"
+        />
+
+        <motion.img
+          src={baloon3}
+          alt="baloon20"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon20"
+        />
+
+        <motion.img
+          src={baloon1}
+          alt="baloon20"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon21"
+        />
+
+        <motion.img
+          src={baloon3}
+          alt="baloon22"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon22"
+        />
+
+        <motion.img
+          src={baloon1}
+          alt="baloon21"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon23"
+        />
+        <motion.img
+          src={baloon3}
+          alt="baloon24"
+          initial="notVisible"
+          animate={baloonsOddControls}
+          variants={baloonsOddVariants}
+          className="baloon24"
+        />
+        <motion.img
+          src={baloon1}
+          alt="baloon25"
+          initial="notVisible"
+          animate={baloonsEvenControls}
+          variants={baloonsEvenVariants}
+          className="baloon25"
+        />
       </motion.div>
     </>
   );
