@@ -258,3 +258,29 @@ h1 .caption {
   top: 8000px;
 
 }
+
+.wish-hbd-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wish-hbd-div div{
+  margin-inline: 2px;
+  font-size: xx-large;
+  /* color: rgb(236, 106, 175); */
+}
+
+
+/* .block {
+  background: rgb(179, 36, 36);
+  cursor: pointer;
+  height: 20px;
+  width: 30px;
+  color: black;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transform: rotate(180deg); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

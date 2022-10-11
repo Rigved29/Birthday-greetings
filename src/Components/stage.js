@@ -4,8 +4,9 @@ import TypeWriter from "typewriter-effect";
 import baloon1 from "../Images/ballon1.svg";
 import baloon2 from "../Images/ballon2.svg";
 import baloon3 from "../Images/ballon3.svg";
+import BirthdayCake from "./BirthdayCake";
 
-const StageAnimation = () => {
+const StageAnimation = (props) => {
   const [searchBar, setSearchBar] = useState(false);
 
   const headingVariants = {
@@ -178,13 +179,13 @@ const StageAnimation = () => {
 
   const baloonsEvenVariants = {
     notVisible: { opacity: 0, y: 1400 },
-    hidden: { opacity: 0, y: 1400 },
+    hidden: { opacity: 1, y: 1400 },
     visible: {
       opacity: 1,
       y: [1400, -9000],
       transition: {
         // delay: 2.5,
-        duration: 6,
+        duration: 7,
         type: "tween",
       },
     },
@@ -192,13 +193,13 @@ const StageAnimation = () => {
 
   const baloonsOddVariants = {
     notVisible: { opacity: 0, y: 1400 },
-    hidden: { opacity: 0, y: 1400 },
+    hidden: { opacity: 1, y: 1400 },
     visible: {
       opacity: 1,
       y: [1400, -9000],
       transition: {
         // delay: 3.5,
-        duration: 6,
+        duration: 7,
         type: "tween",
       },
     },
@@ -206,14 +207,40 @@ const StageAnimation = () => {
 
   const baloonsVariants = {
     notVisible: { opacity: 0, y: 1400 },
-    hidden: { opacity: 0, y: 1400 },
+    hidden: { opacity: 1, y: 1400 },
     visible: {
       opacity: 1,
       y: [1400, -9000],
       transition: {
-        duration: 6,
+        duration: 7,
         type: "tween",
       },
+    },
+  };
+
+  const divSeventhVaraints = {
+    notVisible: { opacity: 0, y: 0 },
+    hidden: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 10,
+
+      transition: {
+        delay: 1,
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
+        duration: 2,
+      },
+    },
+  };
+
+  const wishVariants = {
+    first: { y: -20, opacity: 0, scaleX: 1 },
+    second: { y: 0, opacity: 1, scaleX: -1 },
+    third: { y: 0, opacity: 1, scaleX: 1, color: "rgb(236, 106, 175)" },
+    transition: {
+      duration: 4,
+      type: "spring",
     },
   };
 
@@ -231,6 +258,8 @@ const StageAnimation = () => {
   const baloonsOddControls = useAnimation();
   const baloonsEvenControls = useAnimation();
   const baloonsControls = useAnimation();
+  const div_7_controls = useAnimation();
+  const wishControls = useAnimation();
 
   useEffect(() => {
     const sequence = () => {
@@ -287,9 +316,47 @@ const StageAnimation = () => {
                                                             baloonsEvenControls
                                                               .start("hidden")
                                                               .then(() => {
-                                                                baloonsEvenControls.start(
-                                                                  "visible"
-                                                                );
+                                                                baloonsEvenControls
+                                                                  .start(
+                                                                    "visible"
+                                                                  )
+                                                                  .then(() => {
+                                                                    div_7_controls
+                                                                      .start(
+                                                                        "hidden"
+                                                                      )
+                                                                      .then(
+                                                                        () => {
+                                                                          div_7_controls
+                                                                            .start(
+                                                                              "visible"
+                                                                            )
+                                                                            .then(
+                                                                              () => {
+                                                                                wishControls
+                                                                                  .start(
+                                                                                    "second"
+                                                                                  )
+                                                                                  .then(
+                                                                                    () => {
+                                                                                      wishControls
+                                                                                        .start(
+                                                                                          "third"
+                                                                                        )
+                                                                                        .then(
+                                                                                          () => {
+                                                                                            props.setConffetiStart(
+                                                                                              true
+                                                                                            );
+                                                                                          }
+                                                                                        );
+                                                                                    }
+                                                                                  );
+                                                                              }
+                                                                            );
+                                                                        }
+                                                                      );
+                                                                  });
                                                               });
                                                           });
                                                       });
@@ -691,6 +758,115 @@ const StageAnimation = () => {
           className="baloon25"
         />
       </motion.div>
+      <motion.div
+        initial="notVisible"
+        animate={div_7_controls}
+        variants={divSeventhVaraints}
+        className="wish-hbd-div"
+      >
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+          // initial={{ rotate: 270, y: -20, opacity: 1 }}
+          // animate={{ rotate: 270, y: 0, opacity: 1 }}
+          className="block"
+        >
+          H
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          A
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          P
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          P
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          Y
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          B
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          I
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          R
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          T
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          H
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          D
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          A
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          Y
+        </motion.div>
+        <motion.div
+          initial="first"
+          animate={wishControls}
+          variants={wishVariants}
+        >
+          !
+        </motion.div>
+      </motion.div>
+      <BirthdayCake />
     </>
   );
 };
