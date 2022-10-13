@@ -35,6 +35,7 @@ function App() {
   useEffect(() => {
     if (confettiStart) {
       frame();
+      console.log("running");
     }
   }, [confettiStart]);
 
@@ -54,7 +55,10 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Stage setConffetiStart={(value) => setConffetiStart(value)} />
+      <Stage
+        setConffetiStart={(value) => setConffetiStart(value)}
+        confettiStart={confettiStart}
+      />
     </div>
   );
 }

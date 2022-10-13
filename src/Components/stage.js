@@ -5,6 +5,7 @@ import baloon1 from "../Images/ballon1.svg";
 import baloon2 from "../Images/ballon2.svg";
 import baloon3 from "../Images/ballon3.svg";
 import BirthdayCake from "./BirthdayCake";
+import cakeOne from "../Images/cakeOne.svg";
 
 const StageAnimation = (props) => {
   const [searchBar, setSearchBar] = useState(false);
@@ -43,7 +44,7 @@ const StageAnimation = (props) => {
   };
 
   const div_2_Variants = {
-    notVisible: { opacity: 0, y: 0 },
+    notVisible: { opacity: 0, y: 10 },
     hidden: { opacity: 1, y: 0 },
     visible: {
       opacity: 0,
@@ -51,7 +52,7 @@ const StageAnimation = (props) => {
 
       transition: {
         delay: 4,
-        duration: 0.5,
+        duration: 1,
       },
     },
   };
@@ -76,6 +77,16 @@ const StageAnimation = (props) => {
         duration: 1,
         staggerChildren: 1.5,
         type: "tween",
+      },
+    },
+  };
+
+  const searchBarBtn_Variants = {
+    first: { opacity: 1 },
+    clicked: {
+      opacity: 0.5,
+      transition: {
+        delay: 7,
       },
     },
   };
@@ -137,26 +148,73 @@ const StageAnimation = (props) => {
   };
 
   const soFirstVariants = {
-    notVisible: { opacity: 0, scale: 5, y: 10 },
-    hidden: { opacity: 1, scale: 5, y: 10 },
+    notVisible: { opacity: 0, fontSize: "25rem" },
+    hidden: { opacity: [0, 1], fontSize: "25rem" },
     visible: {
       opacity: 1,
-      scale: [5, 1, 5],
-      y: 0,
+      fontSize: "10rem",
+
       transition: { duration: 1, staggerChildren: 2.5, type: "tween" },
+    },
+    removed: {
+      opacity: [1, 0],
+      fontSize: "25rem",
+      transition: {
+        delay: 1,
+        duration: 1,
+        staggerChildren: 2.5,
+        type: "tween",
+      },
+    },
+  };
+
+  const specialSpanVariants = {
+    first: {
+      fontWeight: "bold",
+      backgroundColor: "transparent",
+      color: "black",
+      borderRadius: "3px",
+      padding: "0px 0px",
+      scale: 1,
+    },
+    second: {
+      fontWeight: "bold",
+      backgroundColor: ["transparent", "cornflowerblue"],
+      color: ["black", "white"],
+      borderRadius: "3px",
+      padding: "3px 5px",
+      scale: 1.5,
+      transition: {
+        delay: 2,
+        duration: 0.4,
+        // ease: "anticipate",
+        type: "spring",
+        damping: 3,
+        // stiffness: 100,
+      },
     },
   };
 
   const soSecondVariants = {
-    notVisible: { opacity: 0, scale: 5, y: 10 },
-    hidden: { opacity: 1, scale: 5, y: 10 },
+    notVisible: { opacity: 0, fontSize: "25rem" },
+    hidden: { opacity: [0, 1], fontSize: "25rem" },
     visible: {
       opacity: 1,
-      scale: [5, 1, 5],
+      fontSize: "10rem",
       y: 0,
       transition: {
         delay: 0.25,
-        duration: 1,
+        duration: 0.5,
+        staggerChildren: 2.5,
+        type: "tween",
+      },
+    },
+    removed: {
+      opacity: [1, 0],
+      fontSize: "25rem",
+      transition: {
+        delay: 1,
+        duration: 0.5,
         staggerChildren: 2.5,
         type: "tween",
       },
@@ -182,7 +240,7 @@ const StageAnimation = (props) => {
     hidden: { opacity: 1, y: 1400 },
     visible: {
       opacity: 1,
-      y: [1400, -9000],
+      y: [1400, -10000],
       transition: {
         // delay: 2.5,
         duration: 7,
@@ -196,7 +254,7 @@ const StageAnimation = (props) => {
     hidden: { opacity: 1, y: 1400 },
     visible: {
       opacity: 1,
-      y: [1400, -9000],
+      y: [1400, -10000],
       transition: {
         // delay: 3.5,
         duration: 7,
@@ -210,7 +268,7 @@ const StageAnimation = (props) => {
     hidden: { opacity: 1, y: 1400 },
     visible: {
       opacity: 1,
-      y: [1400, -9000],
+      y: [1400, -10000],
       transition: {
         duration: 7,
         type: "tween",
@@ -236,11 +294,39 @@ const StageAnimation = (props) => {
 
   const wishVariants = {
     first: { y: -20, opacity: 0, scaleX: 1 },
-    second: { y: 0, opacity: 1, scaleX: -1 },
-    third: { y: 0, opacity: 1, scaleX: 1, color: "rgb(236, 106, 175)" },
-    transition: {
-      duration: 4,
-      type: "spring",
+    second: {
+      y: 0,
+      opacity: 1,
+      scaleX: -1,
+      transition: {
+        duration: 0.25,
+        type: "spring",
+      },
+    },
+    third: {
+      y: 0,
+      opacity: 1,
+      scaleX: 1,
+      color: "rgb(236, 106, 175)",
+      transition: {
+        duration: 0.25,
+        type: "spring",
+      },
+    },
+  };
+
+  const cakeAnimationVariants = {
+    first: { y: -1000, opacity: 0 },
+    second: {
+      y: 0,
+      opacity: [0, 1],
+      transition: {
+        duration: 2,
+        ease: "anticipate",
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
     },
   };
 
@@ -248,9 +334,11 @@ const StageAnimation = (props) => {
   const divTwoControls = useAnimation();
 
   const searchBarDivControls = useAnimation();
+  const searchBarBtnControls = useAnimation();
   const divThirdControls = useAnimation();
   const divFourthControls = useAnimation();
   const divFifthControls = useAnimation();
+  const specialSpanControls = useAnimation();
   const divSixthControls = useAnimation();
   const soFirstControls = useAnimation();
   const soSecondControls = useAnimation();
@@ -260,6 +348,7 @@ const StageAnimation = (props) => {
   const baloonsControls = useAnimation();
   const div_7_controls = useAnimation();
   const wishControls = useAnimation();
+  const cakeAnimationControls = useAnimation();
 
   useEffect(() => {
     const sequence = () => {
@@ -270,12 +359,14 @@ const StageAnimation = (props) => {
               searchBarDivControls.start("initial").then(() => {
                 setSearchBar(true);
                 searchBarDivControls.start("visible").then(() => {
+                  searchBarBtnControls.start("clicked");
                   searchBarDivControls.start("hide").then(() => {
                     divThirdControls.start("hidden").then(() => {
                       divThirdControls.start("visible").then(() => {
                         divFourthControls.start("hidden").then(() => {
                           divFourthControls.start("visible").then(() => {
                             divFifthControls.start("hidden").then(() => {
+                              specialSpanControls.start("second");
                               divFifthControls.start("visible").then(() => {
                                 divSixthControls.start("hidden").then(() => {
                                   // divSixthControls.start("visible").then(() => {
@@ -289,6 +380,13 @@ const StageAnimation = (props) => {
                                             soSecondControls
                                               .start("visible")
                                               .then(() => {
+                                                soFirstControls
+                                                  .start("removed")
+                                                  .then(() => {
+                                                    soSecondControls.start(
+                                                      "removed"
+                                                    );
+                                                  });
                                                 divSixthControls
                                                   .start("visible")
                                                   .then(() => {
@@ -333,7 +431,7 @@ const StageAnimation = (props) => {
                                                                             )
                                                                             .then(
                                                                               () => {
-                                                                                wishControls
+                                                                                cakeAnimationControls
                                                                                   .start(
                                                                                     "second"
                                                                                   )
@@ -341,13 +439,21 @@ const StageAnimation = (props) => {
                                                                                     () => {
                                                                                       wishControls
                                                                                         .start(
-                                                                                          "third"
+                                                                                          "second"
                                                                                         )
                                                                                         .then(
                                                                                           () => {
-                                                                                            props.setConffetiStart(
-                                                                                              true
-                                                                                            );
+                                                                                            wishControls
+                                                                                              .start(
+                                                                                                "third"
+                                                                                              )
+                                                                                              .then(
+                                                                                                () => {
+                                                                                                  props.setConffetiStart(
+                                                                                                    true
+                                                                                                  );
+                                                                                                }
+                                                                                              );
                                                                                           }
                                                                                         );
                                                                                     }
@@ -416,7 +522,7 @@ const StageAnimation = (props) => {
         initial="notVisible"
         animate={divTwoControls}
         variants={div_2_Variants}
-        className="firstDiv"
+        className="secondDiv"
       >
         <AnimatePresence>
           <motion.h1
@@ -424,7 +530,7 @@ const StageAnimation = (props) => {
             animate="visible"
             variants={headingVariants}
           >
-            Today is your birthday :D
+            Today is your birthday!!! :D
           </motion.h1>
         </AnimatePresence>
       </motion.div>
@@ -434,7 +540,6 @@ const StageAnimation = (props) => {
         animate={searchBarDivControls}
         variants={div_searchBar_Variants}
       >
-        {/* <span>I wish you a very oskvlksvv skvlksvv!!</span> */}
         {searchBar && (
           <TypeWriter
             onInit={(typewriter) => {
@@ -451,13 +556,20 @@ const StageAnimation = (props) => {
           />
         )}
 
-        <span className="search-btn">Search</span>
+        <motion.span
+          className="search-btn"
+          initial="first"
+          animate={searchBarBtnControls}
+          variants={searchBarBtn_Variants}
+        >
+          Search
+        </motion.span>
       </motion.div>
       <motion.div
         initial="notVisible"
         animate={divThirdControls}
         variants={div_3_Variants}
-        className="firstDiv"
+        className="thirdDiv"
       >
         <motion.h1
           initial="hidden"
@@ -471,7 +583,7 @@ const StageAnimation = (props) => {
         initial="notVisible"
         animate={divFourthControls}
         variants={div_4_Variants}
-        className="firstDiv"
+        className="fourthDiv"
       >
         <motion.h1
           initial="hidden"
@@ -485,7 +597,7 @@ const StageAnimation = (props) => {
         initial="notVisible"
         animate={divFifthControls}
         variants={div_5_Variants}
-        className="firstDiv"
+        className="fifthDiv"
       >
         <motion.h1
           initial="hidden"
@@ -494,22 +606,9 @@ const StageAnimation = (props) => {
         >
           I realised , I wanted to do something{" "}
           <motion.span
-            initial={{
-              fontWeight: "bold",
-              backgroundColor: "transparent",
-              color: "black",
-            }}
-            animate={{
-              fontWeight: "bold",
-              backgroundColor: ["transparent", "cornflowerblue"],
-              color: ["black", "white"],
-              transition: {
-                delay: 2,
-                duration: 1,
-                staggerChildren: 2.5,
-                type: "tween",
-              },
-            }}
+            initial="first"
+            animate={specialSpanControls}
+            variants={specialSpanVariants}
           >
             special
           </motion.span>
@@ -519,28 +618,29 @@ const StageAnimation = (props) => {
         initial="notVisible"
         animate={divSixthControls}
         variants={div_6_Variants}
-        className="firstDiv"
+        className="sixthDiv"
       >
-        <h1
-        // initial="hidden"
-        // animate="visible"
-        // variants={headingVariants}
+        {/* <h1
+          initial="hidden"
+          animate="visible"
+          variants={headingVariants}
+          className="soH1"
+        > */}
+        <motion.span
+          initial="notVisible"
+          animate={soFirstControls}
+          variants={soFirstVariants}
         >
-          <motion.span
-            initial="notVisible"
-            animate={soFirstControls}
-            variants={soFirstVariants}
-          >
-            S
-          </motion.span>
-          <motion.span
-            initial="notVisible"
-            animate={soSecondControls}
-            variants={soSecondVariants}
-          >
-            O
-          </motion.span>
-        </h1>
+          S
+        </motion.span>
+        <motion.span
+          initial="notVisible"
+          animate={soSecondControls}
+          variants={soSecondVariants}
+        >
+          O
+        </motion.span>
+        {/* </h1> */}
       </motion.div>
       <motion.div
         className="baloons"
@@ -758,115 +858,132 @@ const StageAnimation = (props) => {
           className="baloon25"
         />
       </motion.div>
-      <motion.div
-        initial="notVisible"
-        animate={div_7_controls}
-        variants={divSeventhVaraints}
-        className="wish-hbd-div"
-      >
+      <div className="mainDiv">
+        {/* {props.confettiStart && ( */}
         <motion.div
+          class="cake"
           initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-          // initial={{ rotate: 270, y: -20, opacity: 1 }}
-          // animate={{ rotate: 270, y: 0, opacity: 1 }}
-          className="block"
+          animate={cakeAnimationControls}
+          variants={cakeAnimationVariants}
         >
-          H
+          <div class="cake-bottom"></div>
+          <div class="cake-middle"></div>
+          <div class="cake-top"></div>
+          <div class="candle"></div>
+          <div class="flame"></div>
+          <div class="shadow"></div>
         </motion.div>
+        {/* )} */}
         <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
+          initial="notVisible"
+          animate={div_7_controls}
+          variants={divSeventhVaraints}
+          className="wish-hbd-div"
         >
-          A
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+            // initial={{ rotate: 270, y: -20, opacity: 1 }}
+            // animate={{ rotate: 270, y: 0, opacity: 1 }}
+            className="block"
+          >
+            H
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            A
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            P
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            P
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            Y
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            B
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            I
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            R
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            T
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            H
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            D
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            A
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            Y
+          </motion.div>
+          <motion.div
+            initial="first"
+            animate={wishControls}
+            variants={wishVariants}
+          >
+            !
+          </motion.div>
         </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          P
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          P
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          Y
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          B
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          I
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          R
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          T
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          H
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          D
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          A
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          Y
-        </motion.div>
-        <motion.div
-          initial="first"
-          animate={wishControls}
-          variants={wishVariants}
-        >
-          !
-        </motion.div>
-      </motion.div>
-      <BirthdayCake />
+      </div>
+      {/* <BirthdayCake /> */}
     </>
   );
 };

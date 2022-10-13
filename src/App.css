@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  font-family: "Work Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 0;
 
 }
 
@@ -11,7 +17,7 @@
   padding-block: 6px;
   padding-inline: 6px;
   margin-inline: auto;
-  margin-top: 20%;
+  margin-top: 15%;
   height: 28px;
   line-height: 28px;
   display: flex;
@@ -33,27 +39,82 @@
   cursor: pointer;
 }
 
-.firstDiv{
+.firstDiv , .secondDiv , .thirdDiv , .fourthDiv , .fifthDiv {
   margin-inline: auto;
   position: absolute;
-  top: 10%;
   width: 100%;
   text-align: center;
 
 }
 
+.firstDiv {
+  top: 10%;
+}
+
+.secondDiv{
+  top: 20%;
+}
+
+.thirdDiv{
+  top: 20%;
+}
+
+.fourthDiv{
+  top: 20%;
+}
+
+.fifthDiv{
+  top:20%
+}
+
+.sixthDiv{
+  margin-inline: auto;
+  /* position: absolute; */
+  width: auto;
+  height: auto;
+  text-align: center;
+  /* top: 10%; */
+
+}
+
+.sixthDiv span{
+  font-weight: 400;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.sixth
+
+
+
 .firstDiv h1{
-  font-size: 4rem;
-  
+  font-size: 4.5rem;
+  font-weight: 600;
   
 }
 
 h1 .caption {
 
-  font-size: small;
+  font-size: 1.2rem;
+  font-weight: lighter;
   color: gray;
+  margin-top: 50px;
   
 
+}
+
+.secondDiv h1{
+  font-size: 3rem;
+  font-weight: 400;
+  
+
+}
+
+
+.thirdDiv h1, .fourthDiv h1 , .fifthDiv h1{
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .baloons {
@@ -259,6 +320,17 @@ h1 .caption {
 
 }
 
+
+.mainDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-top: -500px;
+}
+
 .wish-hbd-div{
   display: flex;
   justify-content: center;
@@ -284,3 +356,237 @@ h1 .caption {
   justify-content: center;
   align-items: center;
 } */
+
+.cake {
+  position: relative;
+  height: 260px;
+  width: 200px;
+  margin-inline: auto;
+  /* top:40px;
+  top: 60px; */
+  /* left: 37%; */
+}
+
+.card:after {
+  content:"";
+  position: absolute;
+  height: 5px;
+  border-radius: 0 10px 10px 0;
+  width: 122px;
+  background-color: rgba(0,0,0,0.1);
+  top:340px;
+  left:193px;
+}
+
+.cake-bottom {
+  position: absolute;
+  width:200px;
+  height: 60px;
+  background-color: #06d6a0;
+  top:175px;
+  /* left:91px; */
+  border-radius: 7px 7px 0 0;
+  overflow: hidden;
+}
+
+.cake-bottom:after {
+  content:"";
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  left:-5px;
+  border-radius: 0 0 50px 50px;
+  background-color: white;
+  box-shadow: 30px 0 white, 60px 0 white, 90px 0 white, 120px 0 white, 150px 0 white, 180px 0 white;
+}
+
+.cake-bottom:before {
+  content:"";
+  position: absolute;
+  background-color: #ef476f;
+  width: 30px;
+  height: 60px;
+  left:25px;
+  box-shadow: 60px 0 #ef476f, 120px 0 #ef476f;
+}
+
+.cake-middle {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  background-color: #118ab2;
+  border-radius: 7px 7px 0 0;
+  top:115px;
+  /* left:117px; */
+  left:25px;
+  box-shadow: inset 0 -20px #073b4c;
+  overflow: hidden;
+}
+
+.cake-middle:before {
+  content:"";
+  position:absolute;
+  background-color: #ef476f;
+  border-radius:50%;
+  width:10px;
+  height: 10px;
+  top:20px;
+  left: 10px;
+  box-shadow: 15px 10px #ffd166, 30px 0 #06d6a0, 45px 10px #ef476f, 60px 0 #ffd166, 75px 10px #06d6a0, 90px 0 #ef476f, 105px 10px #ffd166, 120px 0 #06d6a0;
+}
+
+.cake-middle:after {
+  content:"";
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  left:0;
+  border-radius: 0 0 50px 50px;
+  background-color: white;
+  box-shadow: 30px 0 white, 60px 0 white, 90px 0 white, 120px 0 white;
+}
+
+.cake-top {
+  position: absolute;
+  width:100px;
+  height: 60px;
+  background-color: #ef476f;
+  border-radius: 7px 7px 0 0;
+  top:55px;
+  /* left:143px; */
+  left: 50px;
+  overflow: hidden;
+  box-shadow: inset 0 20px #118ab2;
+}
+
+.cake-top:before {
+  content:"";
+  position: absolute;
+  background-color: #118ab2;
+  width: 15px;
+  height:35px;
+  left:-5px;
+  border-radius:20px;
+  box-shadow: 15px 10px #ef476f, 30px 5px #118ab2, 45px 5px #ef476f,60px -10px #118ab2, 75px 10px #ef476f, 90px 0 #118ab2; 
+}
+
+.cake-top:after {
+  position: absolute;
+  content:"";
+  background-color: rgba(0,0,0,0.1);
+  width:50px;
+  border-radius: 0 7px 0 0;
+  height: 60px;
+  left:50px;
+}
+
+.candle {
+  position: absolute;
+  background: repeating-linear-gradient(-45deg, white, white 5px,
+  #06d6a0 5px, #06d6a0 10px);
+  width:8px;
+  height: 30px;
+  border-radius: 3px 3px 0 0;
+  top:25px;
+  left:95px;  
+}
+
+.candle:before {
+  content:"";
+  position: absolute;
+  background-color: #333;
+  width:1px;
+  height:10px;
+  top:-10px;
+  left:4px;
+}
+
+.flame {
+  position: absolute;
+  opacity:0.7;
+}
+
+.flame:before {
+  content:"";
+  position: absolute;
+  background-color: #fb5607;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  transform: rotate(-45deg);
+  width:20px;
+  height:20px;
+  top:0px;
+  left:90px;
+  animation: scale .5s linear infinite;
+}
+
+/* .flame:after {
+  content:"";
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ffbe0b;
+  width: 11px;
+  height: 11px;
+  top:61px;
+  left:90px;
+  animation: scale .5s linear infinite;
+} */
+
+@keyframes scale {
+  0% {transform: scaleY(1) rotate(-45deg);}
+  25% {transform: scaleY(1.3) rotate(-45deg);}
+  50% {transform: scaleY(1) rotate(-45deg);}
+  75% {transform: scaleY(1.3) rotate(-45deg);}
+  100% {transform: scaleY(1) rotate(-45deg);}
+}
+
+/* .shadow {
+  position: absolute;
+  background-color: rgba(0,0,0,0.1);
+  height: 60px;
+  width: 74px;
+  border-radius:0 7px 0 0;
+  top:180px;
+  left:193px;
+} */
+
+
+/*
+.shadow:before, .shadow:after {
+  content:"";
+  position: absolute;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.shadow:before {
+  height: 60px;
+  width:98.5px;
+  border-radius:0 7px 0 0;
+  top:60px;
+}
+
+.shadow:after {
+  height: 40px;
+  width:5px;
+  border-radius: 0 5px 0 0;
+  top:-100px;
+} */
+
+@media screen and (min-width: 750px) {
+  .search-bar {
+    width: 35.5rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .search-bar {
+    width: 31rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search-bar {
+    width: 20rem;
+    font-size: 10px;
+  }
+}
