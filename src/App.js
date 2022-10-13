@@ -9,6 +9,8 @@ function App() {
 
   var colors = ["#8b5642", "#6a696b"];
 
+  const end = Date.now() + 10000;
+
   function frame() {
     confetti({
       particleCount: 2,
@@ -25,7 +27,7 @@ function App() {
       colors: colors,
     });
 
-    if (Date.now() < Date.now() + 15000) {
+    if (Date.now() < end) {
       requestAnimationFrame(frame);
     }
   }
@@ -58,6 +60,7 @@ function App() {
       <Stage
         setConffetiStart={(value) => setConffetiStart(value)}
         confettiStart={confettiStart}
+        frameHandler={(val) => frame(val)}
       />
     </div>
   );

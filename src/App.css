@@ -335,6 +335,7 @@ h1 .caption {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .wish-hbd-div div{
@@ -362,6 +363,7 @@ h1 .caption {
   height: 260px;
   width: 200px;
   margin-inline: auto;
+  z-index: 1;
   /* top:40px;
   top: 60px; */
   /* left: 37%; */
@@ -570,6 +572,77 @@ h1 .caption {
   border-radius: 0 5px 0 0;
   top:-100px;
 } */
+
+.divEight{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.divEight svg {
+  width: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* visibility: hidden; */
+  z-index: -1;
+}
+
+.divEight svg:nth-child(1) {
+  top: 7vh;
+  left: 5vw;
+  fill: #bd6ecf;
+}
+
+.divEight svg:nth-child(2) {
+  top: 23vh;
+  left: 35vw;
+  fill: #7dd175;
+}
+
+.divEight svg:nth-child(3) {
+  top: 33vh;
+  left: 23vw;
+  fill: #349d8b;
+}
+
+.divEight svg:nth-child(4) {
+  top: 43vh;
+  left: 57vw;
+  fill: #347a9d;
+}
+
+.divEight svg:nth-child(5) {
+  top: 68vh;
+  left: 7vw;
+  fill: #c66053;
+}
+
+.divEight svg:nth-child(6) {
+  top: 42vh;
+  left: 77vw;
+  fill: #bfaa40;
+}
+
+.divEight svg:nth-child(7) {
+  top: 68vh;
+  left: 83vw;
+  fill: #e3bae8;
+}
+
+.divEight svg:nth-child(8) {
+  top: 86vh;
+  left: 37vw;
+  fill: #8762cb;
+}
+
+.divEight svg:nth-child(9) {
+  top: 94vh;
+  left: 87vw;
+  fill: #9a90da;
+}
+
 
 @media screen and (min-width: 750px) {
   .search-bar {

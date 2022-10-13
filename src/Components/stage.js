@@ -330,6 +330,37 @@ const StageAnimation = (props) => {
     },
   };
 
+  const eightDivVariants = {
+    first: { opacity: 0 },
+    second: {
+      opacity: [0, 1],
+      transition: {
+        duration: 1,
+        ease: "anticipate",
+        type: "tween",
+        staggerChildren: 0.5,
+        delayChildren: 1,
+      },
+    },
+  };
+
+  const eightDivSvgVariants = {
+    first: { opacity: 0, visibility: "hidden", scale: 1 },
+    second: {
+      opacity: [0, 0.5, 0],
+      visibility: "visible",
+      scale: 80,
+      transition: {
+        duration: 1.5,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 1.4,
+        // ease: "anticipate",
+        // type: "tween",
+      },
+    },
+  };
+
   const divOneControls = useAnimation();
   const divTwoControls = useAnimation();
 
@@ -349,6 +380,16 @@ const StageAnimation = (props) => {
   const div_7_controls = useAnimation();
   const wishControls = useAnimation();
   const cakeAnimationControls = useAnimation();
+  const eightDivControls = useAnimation();
+  const eightDivFirstSvgControls = useAnimation();
+  const eightDivSecondSvgControls = useAnimation();
+  const eightDivThirdSvgControls = useAnimation();
+  const eightDivFourthSvgControls = useAnimation();
+  const eightDivFifthSvgControls = useAnimation();
+  const eightDivSixthSvgControls = useAnimation();
+  const eightDivSeventhSvgControls = useAnimation();
+  const eightDivEightSvgControls = useAnimation();
+  const eightDivNineSvgControls = useAnimation();
 
   useEffect(() => {
     const sequence = () => {
@@ -451,6 +492,96 @@ const StageAnimation = (props) => {
                                                                                                 () => {
                                                                                                   props.setConffetiStart(
                                                                                                     true
+                                                                                                  );
+                                                                                                  setTimeout(
+                                                                                                    () => {
+                                                                                                      eightDivControls
+                                                                                                        .start(
+                                                                                                          "second"
+                                                                                                        )
+                                                                                                        .then(
+                                                                                                          () => {
+                                                                                                            eightDivFirstSvgControls.start(
+                                                                                                              "second"
+                                                                                                            );
+
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivSecondSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              500
+                                                                                                            );
+
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivThirdSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              1000
+                                                                                                            );
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivFourthSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              1500
+                                                                                                            );
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivFifthSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              2000
+                                                                                                            );
+
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivSixthSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              2500
+                                                                                                            );
+
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivSeventhSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              3000
+                                                                                                            );
+
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivEightSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              3500
+                                                                                                            );
+
+                                                                                                            setTimeout(
+                                                                                                              () => {
+                                                                                                                eightDivNineSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+                                                                                                              },
+                                                                                                              4000
+                                                                                                            );
+                                                                                                          }
+                                                                                                        );
+
+                                                                                                      console.log(
+                                                                                                        "Running at 503"
+                                                                                                      );
+                                                                                                    },
+                                                                                                    5000
                                                                                                   );
                                                                                                 }
                                                                                               );
@@ -983,6 +1114,96 @@ const StageAnimation = (props) => {
           </motion.div>
         </motion.div>
       </div>
+      <motion.div
+        className="divEight"
+        initial="hidden"
+        animate={eightDivControls}
+        variants={eightDivVariants}
+      >
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivFirstSvgControls}
+          // animate="second"
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivSecondSvgControls}
+          // animate="second"
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivThirdSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivFourthSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivFifthSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivSixthSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivSeventhSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivEightSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+        <motion.svg
+          viewBox="0 0 40 40"
+          xmlns="http://www.w3.org/2000/svg"
+          initial="first"
+          animate={eightDivNineSvgControls}
+          variants={eightDivSvgVariants}
+        >
+          <circle cx="20" cy="20" r="20" />
+        </motion.svg>
+      </motion.div>
       {/* <BirthdayCake /> */}
     </>
   );
