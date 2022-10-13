@@ -148,24 +148,40 @@ const StageAnimation = (props) => {
   };
 
   const soFirstVariants = {
-    notVisible: { opacity: 0, fontSize: "25rem" },
-    hidden: { opacity: [0, 1], fontSize: "25rem" },
-    visible: {
-      opacity: 1,
+    notVisible: { opacity: 0, fontSize: "25rem", x: -100 },
+    hidden: {
+      opacity: [0, 1],
       fontSize: "10rem",
-
-      transition: { duration: 1, staggerChildren: 2.5, type: "tween" },
-    },
-    removed: {
-      opacity: [1, 0],
-      fontSize: "25rem",
+      x: -100,
       transition: {
-        delay: 1,
         duration: 1,
-        staggerChildren: 2.5,
-        type: "tween",
       },
     },
+    visible: {
+      opacity: [1, 0],
+      fontSize: ["10rem", "25rem"],
+      // y: [-1000, 0],
+      y: 0,
+      x: -100,
+
+      transition: {
+        duration: 1.5,
+        staggerChildren: 2.5,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+    // removed: {
+    //   opacity: [1, 0],
+    //   fontSize: "25rem",
+    //   transition: {
+    //     delay: 1,
+    //     duration: 1,
+    //     staggerChildren: 2.5,
+    //     type: "spring",
+    //     stiffness: 100,
+    //   },
+    // },
   };
 
   const specialSpanVariants = {
@@ -187,38 +203,47 @@ const StageAnimation = (props) => {
       transition: {
         delay: 2,
         duration: 0.4,
-        // ease: "anticipate",
         type: "spring",
-        damping: 3,
-        // stiffness: 100,
+        stiffness: 100,
       },
     },
   };
 
   const soSecondVariants = {
-    notVisible: { opacity: 0, fontSize: "25rem" },
-    hidden: { opacity: [0, 1], fontSize: "25rem" },
-    visible: {
-      opacity: 1,
+    notVisible: { opacity: 0, fontSize: "25rem", x: 0 },
+    hidden: {
+      opacity: [0, 1],
       fontSize: "10rem",
-      y: 0,
+      x: 0,
       transition: {
-        delay: 0.25,
         duration: 0.5,
-        staggerChildren: 2.5,
-        type: "tween",
       },
     },
-    removed: {
+    visible: {
       opacity: [1, 0],
-      fontSize: "25rem",
+      fontSize: ["10rem", "25rem"],
+      // y: [-1000, 0],
+      y: 0,
+      x: 0,
       transition: {
-        delay: 1,
-        duration: 0.5,
+        // delay: 0.2,
+        duration: 1,
         staggerChildren: 2.5,
-        type: "tween",
+        type: "spring",
+        stiffness: 100,
       },
     },
+    // removed: {
+    //   opacity: [1, 0],
+    //   fontSize: "25rem",
+    //   transition: {
+    //     delay: 0.2,
+    //     duration: 0.5,
+    //     staggerChildren: 2.5,
+    //     type: "spring",
+    //     stiffness: 100,
+    //   },
+    // },
   };
 
   const baloonsDivVariants = {
@@ -412,194 +437,198 @@ const StageAnimation = (props) => {
                                 divSixthControls.start("hidden").then(() => {
                                   // divSixthControls.start("visible").then(() => {
                                   soFirstControls.start("hidden").then(() => {
-                                    soFirstControls
-                                      .start("visible")
+                                    soSecondControls
+                                      .start("hidden")
                                       .then(() => {
-                                        soSecondControls
-                                          .start("hidden")
-                                          .then(() => {
-                                            soSecondControls
-                                              .start("visible")
-                                              .then(() => {
-                                                soFirstControls
-                                                  .start("removed")
-                                                  .then(() => {
-                                                    soSecondControls.start(
-                                                      "removed"
-                                                    );
-                                                  });
-                                                divSixthControls
-                                                  .start("visible")
-                                                  .then(() => {
-                                                    baloonsDivControls
-                                                      .start("hidden")
-                                                      .then(() => {
-                                                        baloonsDivControls
-                                                          .start("visible")
-                                                          .then(() => {
-                                                            baloonsControls
-                                                              .start("hidden")
-                                                              .then(() => {
-                                                                baloonsControls.start(
-                                                                  "visible"
-                                                                );
-                                                              });
-                                                            baloonsOddControls
-                                                              .start("hidden")
-                                                              .then(() => {
-                                                                baloonsOddControls.start(
-                                                                  "visible"
-                                                                );
-                                                              });
-
-                                                            baloonsEvenControls
-                                                              .start("hidden")
-                                                              .then(() => {
-                                                                baloonsEvenControls
-                                                                  .start(
+                                        setTimeout(() => {
+                                          soFirstControls
+                                            .start("visible")
+                                            .then(() => {
+                                              soSecondControls
+                                                .start("visible")
+                                                .then(() => {
+                                                  soFirstControls
+                                                    .start("removed")
+                                                    .then(() => {
+                                                      soSecondControls.start(
+                                                        "removed"
+                                                      );
+                                                    });
+                                                  divSixthControls
+                                                    .start("visible")
+                                                    .then(() => {
+                                                      baloonsDivControls
+                                                        .start("hidden")
+                                                        .then(() => {
+                                                          baloonsDivControls
+                                                            .start("visible")
+                                                            .then(() => {
+                                                              baloonsControls
+                                                                .start("hidden")
+                                                                .then(() => {
+                                                                  baloonsControls.start(
                                                                     "visible"
-                                                                  )
-                                                                  .then(() => {
-                                                                    div_7_controls
-                                                                      .start(
-                                                                        "hidden"
-                                                                      )
-                                                                      .then(
-                                                                        () => {
-                                                                          div_7_controls
-                                                                            .start(
-                                                                              "visible"
-                                                                            )
-                                                                            .then(
-                                                                              () => {
-                                                                                cakeAnimationControls
-                                                                                  .start(
-                                                                                    "second"
-                                                                                  )
-                                                                                  .then(
-                                                                                    () => {
-                                                                                      wishControls
-                                                                                        .start(
-                                                                                          "second"
-                                                                                        )
-                                                                                        .then(
-                                                                                          () => {
-                                                                                            wishControls
-                                                                                              .start(
-                                                                                                "third"
-                                                                                              )
-                                                                                              .then(
-                                                                                                () => {
-                                                                                                  props.setConffetiStart(
-                                                                                                    true
-                                                                                                  );
-                                                                                                  setTimeout(
+                                                                  );
+                                                                });
+                                                              baloonsOddControls
+                                                                .start("hidden")
+                                                                .then(() => {
+                                                                  baloonsOddControls.start(
+                                                                    "visible"
+                                                                  );
+                                                                });
+
+                                                              baloonsEvenControls
+                                                                .start("hidden")
+                                                                .then(() => {
+                                                                  baloonsEvenControls
+                                                                    .start(
+                                                                      "visible"
+                                                                    )
+                                                                    .then(
+                                                                      () => {
+                                                                        div_7_controls
+                                                                          .start(
+                                                                            "hidden"
+                                                                          )
+                                                                          .then(
+                                                                            () => {
+                                                                              div_7_controls
+                                                                                .start(
+                                                                                  "visible"
+                                                                                )
+                                                                                .then(
+                                                                                  () => {
+                                                                                    cakeAnimationControls
+                                                                                      .start(
+                                                                                        "second"
+                                                                                      )
+                                                                                      .then(
+                                                                                        () => {
+                                                                                          wishControls
+                                                                                            .start(
+                                                                                              "second"
+                                                                                            )
+                                                                                            .then(
+                                                                                              () => {
+                                                                                                wishControls
+                                                                                                  .start(
+                                                                                                    "third"
+                                                                                                  )
+                                                                                                  .then(
                                                                                                     () => {
-                                                                                                      eightDivControls
-                                                                                                        .start(
-                                                                                                          "second"
-                                                                                                        )
-                                                                                                        .then(
-                                                                                                          () => {
-                                                                                                            eightDivFirstSvgControls.start(
-                                                                                                              "second"
-                                                                                                            );
-
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivSecondSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              500
-                                                                                                            );
-
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivThirdSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              1000
-                                                                                                            );
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivFourthSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              1500
-                                                                                                            );
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivFifthSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              2000
-                                                                                                            );
-
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivSixthSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              2500
-                                                                                                            );
-
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivSeventhSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              3000
-                                                                                                            );
-
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivEightSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              3500
-                                                                                                            );
-
-                                                                                                            setTimeout(
-                                                                                                              () => {
-                                                                                                                eightDivNineSvgControls.start(
-                                                                                                                  "second"
-                                                                                                                );
-                                                                                                              },
-                                                                                                              4000
-                                                                                                            );
-                                                                                                          }
-                                                                                                        );
-
-                                                                                                      console.log(
-                                                                                                        "Running at 503"
+                                                                                                      props.setConffetiStart(
+                                                                                                        true
                                                                                                       );
-                                                                                                    },
-                                                                                                    5000
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivControls
+                                                                                                            .start(
+                                                                                                              "second"
+                                                                                                            )
+                                                                                                            .then(
+                                                                                                              () => {
+                                                                                                                eightDivFirstSvgControls.start(
+                                                                                                                  "second"
+                                                                                                                );
+
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivSecondSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  500
+                                                                                                                );
+
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivThirdSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  1000
+                                                                                                                );
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivFourthSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  1500
+                                                                                                                );
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivFifthSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  2000
+                                                                                                                );
+
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivSixthSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  2500
+                                                                                                                );
+
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivSeventhSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  3000
+                                                                                                                );
+
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivEightSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  3500
+                                                                                                                );
+
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivNineSvgControls.start(
+                                                                                                                      "second"
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  4000
+                                                                                                                );
+                                                                                                              }
+                                                                                                            );
+
+                                                                                                          console.log(
+                                                                                                            "Running at 503"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        5000
+                                                                                                      );
+                                                                                                    }
                                                                                                   );
-                                                                                                }
-                                                                                              );
-                                                                                          }
-                                                                                        );
-                                                                                    }
-                                                                                  );
-                                                                              }
-                                                                            );
-                                                                        }
-                                                                      );
-                                                                  });
-                                                              });
-                                                          });
-                                                      });
-                                                  });
-                                              });
-                                          });
+                                                                                              }
+                                                                                            );
+                                                                                        }
+                                                                                      );
+                                                                                  }
+                                                                                );
+                                                                            }
+                                                                          );
+                                                                      }
+                                                                    );
+                                                                });
+                                                            });
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        }, 2000);
                                       });
                                   });
                                   // });
@@ -745,10 +774,10 @@ const StageAnimation = (props) => {
           </motion.span>
         </motion.h1>
       </motion.div>
-      <motion.div
-        initial="notVisible"
-        animate={divSixthControls}
-        variants={div_6_Variants}
+      <div
+        // initial="notVisible"
+        // animate={divSixthControls}
+        // variants={div_6_Variants}
         className="sixthDiv"
       >
         {/* <h1
@@ -772,7 +801,7 @@ const StageAnimation = (props) => {
           O
         </motion.span>
         {/* </h1> */}
-      </motion.div>
+      </div>
       <motion.div
         className="baloons"
         initial="notVisible"

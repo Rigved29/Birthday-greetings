@@ -37,6 +37,8 @@
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .firstDiv , .secondDiv , .thirdDiv , .fourthDiv , .fifthDiv {
@@ -69,6 +71,8 @@
 
 .sixthDiv{
   margin-inline: auto;
+  width: 600px;
+  height: auto;
   /* position: absolute; */
   width: auto;
   height: auto;
@@ -79,12 +83,15 @@
 
 .sixthDiv span{
   font-weight: 400;
+  position: absolute;
+  top:100px;
+
   /* display: flex;
   justify-content: center;
   align-items: center; */
 }
 
-.sixth
+
 
 
 
@@ -328,7 +335,7 @@ h1 .caption {
   align-items: center;
   width: 100%;
   height: 300px;
-  margin-top: -500px;
+  /* margin-top: -500px; */
 }
 
 .wish-hbd-div{
@@ -574,8 +581,8 @@ h1 .caption {
 } */
 
 .divEight{
-  width: 100vw;
-  height: 100vh;
+  /* width: 100%;
+  height: 100%; */
   position: fixed;
   top: 0;
 }
