@@ -664,6 +664,194 @@ h1 .caption {
   }
 }
 
+@media screen and (max-width: 650px) {
+  .baloons img {
+
+    width: 600px;
+    height:550px;
+
+  }
+
+
+  .baloons .baloon1{
+
+    left: 20px;
+    
+  
+  }
+  
+  
+  .baloons .baloon2{
+  
+    right: 20px;
+    top: 200px;
+  
+  }
+  
+  .baloons .baloon3{
+  
+    right: 80px;
+    top: 550px;
+  
+  }
+  
+  .baloons .baloon4{
+  
+    left: 10px;
+    top: 700px;
+  
+  }
+  
+  .baloons .baloon5{
+  
+    right: 8px;
+    top: 1060px;
+  
+  }
+  
+  
+  .baloons .baloon6{
+  
+    right: 400px;
+    top: 1200px;
+  
+  }
+  
+  .baloons .baloon7{
+  
+    left: 95px;
+    top: 1400px;
+  
+  }
+  
+  .baloons .baloon8{
+  
+    right: 200px;
+    top: 1700px;
+  
+  }
+  
+  .baloons .baloon9{
+  
+    left: 80px;
+    top: 2000px;
+  
+  }
+  
+  .baloons .baloon10{
+  
+    right: 10px;
+    top: 2200px;
+  
+  }
+  
+  .baloons .baloon11{
+  
+    right: 10px;
+    top: 2500px;
+  
+  }
+  
+  .baloons .baloon12{
+  
+    left: 10px;
+    top: 2800px;
+  
+  }
+  
+  .baloons .baloon13{
+  
+    right: 10px;
+    top: 3200px;
+  
+  }
+  
+  .baloons .baloon14{
+  
+    right: 405px;
+    top: 3600px;
+  
+  }
+  
+  .baloons .baloon15{
+  
+    left: 205px;
+    top: 4000px;
+  
+  }
+  
+  .baloons .baloon16{
+  
+    left: 315px;
+    top: 4300px;
+  
+  }
+  
+  .baloons .baloon17{
+  
+    right: 138px;
+    top: 4600px;
+  
+  }
+  
+  .baloons .baloon18{
+  
+    right: 10px;
+    top: 5000px;
+  
+  }
+  
+  .baloons .baloon19{
+  
+    left: 10px;
+    top: 5300px;
+  
+  }
+  
+  .baloons .baloon20{
+  
+    right: 350px;
+    top: 5600px;
+  
+  }
+  
+  .baloons .baloon21{
+  
+    right: 25px;
+    top: 5900px;
+  
+  }
+  
+  .baloons .baloon22{
+  
+    left: 110px;
+    top: 6200px;
+  
+  }
+  
+  .baloons .baloon23{
+  
+    right: 355px;
+    top: 7400px;
+  
+  }
+  
+  .baloons .baloon24{
+  
+    left: 165px;
+    top: 7700px;
+  
+  }
+  
+  .baloons .baloon25{
+  
+    left: 255px;
+    top: 8000px;
+  
+  }
+
+}
+
 @media screen and (max-width: 450px) {
   .search-bar {
     width: 20rem;

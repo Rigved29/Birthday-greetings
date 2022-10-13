@@ -9,6 +9,7 @@ import cakeOne from "../Images/cakeOne.svg";
 
 const StageAnimation = (props) => {
   const [searchBar, setSearchBar] = useState(false);
+  const [madeBy, setMadeBy] = useState(false);
 
   const headingVariants = {
     hidden: { opacity: 0, scale: 1, y: 10 },
@@ -201,7 +202,7 @@ const StageAnimation = (props) => {
       padding: "3px 5px",
       scale: 1.5,
       transition: {
-        delay: 2,
+        delay: 0.5,
         duration: 0.4,
         type: "spring",
         stiffness: 100,
@@ -270,6 +271,9 @@ const StageAnimation = (props) => {
         // delay: 2.5,
         duration: 7,
         type: "tween",
+        // repeat: Infinity,
+        // repeatType: "loop",
+        // repeatDelay: -1,
       },
     },
   };
@@ -284,6 +288,9 @@ const StageAnimation = (props) => {
         // delay: 3.5,
         duration: 7,
         type: "tween",
+        // repeat: Infinity,
+        // repeatType: "loop",
+        // repeatDelay: -1,
       },
     },
   };
@@ -297,6 +304,9 @@ const StageAnimation = (props) => {
       transition: {
         duration: 7,
         type: "tween",
+        // repeat: Infinity,
+        // repeatType: "loop",
+        // repeatDelay: -1,
       },
     },
   };
@@ -309,10 +319,10 @@ const StageAnimation = (props) => {
       y: 10,
 
       transition: {
-        delay: 1,
+        // delay: 1,
         delayChildren: 0.5,
         staggerChildren: 0.5,
-        duration: 2,
+        duration: 1,
       },
     },
   };
@@ -377,7 +387,7 @@ const StageAnimation = (props) => {
       scale: 80,
       transition: {
         duration: 1.5,
-        repeat: Infinity,
+        repeat: 4,
         repeatType: "loop",
         repeatDelay: 1.4,
         // ease: "anticipate",
@@ -595,9 +605,29 @@ const StageAnimation = (props) => {
 
                                                                                                                 setTimeout(
                                                                                                                   () => {
-                                                                                                                    eightDivNineSvgControls.start(
-                                                                                                                      "second"
-                                                                                                                    );
+                                                                                                                    eightDivNineSvgControls
+                                                                                                                      .start(
+                                                                                                                        "second"
+                                                                                                                      )
+                                                                                                                      .then(
+                                                                                                                        () => {
+                                                                                                                          setTimeout(
+                                                                                                                            () => {
+                                                                                                                              eightDivControls.stop();
+                                                                                                                              cakeAnimationControls.start(
+                                                                                                                                "first"
+                                                                                                                              );
+                                                                                                                              wishControls.start(
+                                                                                                                                "first"
+                                                                                                                              );
+                                                                                                                              setMadeBy(
+                                                                                                                                true
+                                                                                                                              );
+                                                                                                                            },
+                                                                                                                            500
+                                                                                                                          );
+                                                                                                                        }
+                                                                                                                      );
                                                                                                                   },
                                                                                                                   4000
                                                                                                                 );
@@ -651,6 +681,8 @@ const StageAnimation = (props) => {
     sequence();
   }, [divOneControls, divTwoControls]);
 
+  const name = "Amrita";
+
   return (
     <>
       <motion.div
@@ -665,7 +697,7 @@ const StageAnimation = (props) => {
             animate="visible"
             variants={headingVariants}
           >
-            Hi, Lydia
+            Hi, {name}
             <motion.p
               className="caption"
               initial="hidden"
@@ -705,11 +737,8 @@ const StageAnimation = (props) => {
             onInit={(typewriter) => {
               typewriter
                 .typeString(
-                  "Happy birthday to you!! Yeee! Many many happy blah..."
+                  `Happy birthday ${name}!! Yeee! Many many happy blah...`
                 )
-                // .typeString(
-                //   "<strong>JS</strong> plugin for a cool typewriter effect and "
-                // )
                 .pauseFor(3000)
                 .start();
             }}
@@ -1234,6 +1263,17 @@ const StageAnimation = (props) => {
         </motion.svg>
       </motion.div>
       {/* <BirthdayCake /> */}
+      {madeBy && (
+        <TypeWriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString("Okay, I hope you liked it , and again ")
+              .typeString("Many Many happy returns of the day..🥳🎈 ")
+              .pauseFor(3000)
+              .start();
+          }}
+        />
+      )}
     </>
   );
 };

@@ -9,7 +9,7 @@ function App() {
 
   var colors = ["#8b5642", "#6a696b"];
 
-  const end = Date.now() + 10000;
+  const end = Date.now() + 5000;
 
   function frame() {
     confetti({
