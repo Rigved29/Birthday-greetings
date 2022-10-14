@@ -351,7 +351,7 @@ h1 .caption {
 }
 
 .wish-hbd-div div{
-  margin-inline: 2px;
+  margin-inline: 1px;
   font-size: xx-large;
   /* color: rgb(236, 106, 175); */
 }
@@ -653,6 +653,11 @@ h1 .caption {
   top: 94vh;
   left: 87vw;
   fill: #9a90da;
+}
+
+.reload{
+  font-size: smaller;
+  color: rgb(79, 78, 78);
 }
 
 
