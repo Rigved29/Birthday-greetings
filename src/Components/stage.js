@@ -1500,7 +1500,7 @@ const StageAnimation = (props) => {
       {madeBy && (
         <motion.p
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 15, type: "tween" } }}
+          animate={{ opacity: 1, transition: { delay: 20, type: "tween" } }}
           className="reload"
         >
           reload the page , if u want to watch it again...😁
