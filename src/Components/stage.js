@@ -926,7 +926,7 @@ const StageAnimation = (props) => {
               transition={{ delay: 0.5, duration: 2.5 }}
               variants={captionVariants}
             >
-              {` I know it's little late to wish you..`}
+              {` I know it's little late to wish you..it's almost 12 noon`}
             </motion.p>
           </motion.h1>
         </AnimatePresence>
@@ -1488,8 +1488,10 @@ const StageAnimation = (props) => {
         <TypeWriter
           onInit={(typewriter) => {
             typewriter
-              .typeString("Okay, I hope you liked it , and again ")
-              .typeString("Many Many happy returns of the day..🥳🎈 ")
+              .typeString(
+                "Okay, I hope you liked it and I want party let me know when will you give..🥳 , and again "
+              )
+              .typeString("Many Many happy returns of the day..🎉🎈 ")
               .pauseFor(3000)
               .start();
           }}
