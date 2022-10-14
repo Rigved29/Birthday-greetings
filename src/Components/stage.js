@@ -149,7 +149,7 @@ const StageAnimation = (props) => {
   };
 
   const soFirstVariants = {
-    notVisible: { opacity: 0, fontSize: "25rem", x: -100 },
+    notVisible: { opacity: 0, fontSize: "10rem", x: -100 },
     hidden: {
       opacity: [0, 1],
       fontSize: "10rem",
@@ -160,7 +160,7 @@ const StageAnimation = (props) => {
     },
     visible: {
       opacity: [1, 0],
-      fontSize: ["10rem", "25rem"],
+      fontSize: ["10rem", "10rem"],
       // y: [-1000, 0],
       y: 0,
       x: -100,
@@ -211,7 +211,7 @@ const StageAnimation = (props) => {
   };
 
   const soSecondVariants = {
-    notVisible: { opacity: 0, fontSize: "25rem", x: 0 },
+    notVisible: { opacity: 0, fontSize: "10rem", x: 0 },
     hidden: {
       opacity: [0, 1],
       fontSize: "10rem",
@@ -222,7 +222,7 @@ const StageAnimation = (props) => {
     },
     visible: {
       opacity: [1, 0],
-      fontSize: ["10rem", "25rem"],
+      fontSize: ["10rem", "10rem"],
       // y: [-1000, 0],
       y: 0,
       x: 0,
