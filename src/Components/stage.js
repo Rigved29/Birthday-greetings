@@ -1489,7 +1489,7 @@ const StageAnimation = (props) => {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                "Okay, I hope you liked it and I want party let me know when will you give..🥳 , and again "
+                "I hope you liked it..😊 and I want party let me know when will you give..🥳 , and again "
               )
               .typeString("Many Many happy returns of the day..🎉🎈 ")
               .pauseFor(3000)
