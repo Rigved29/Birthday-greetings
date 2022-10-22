@@ -3,8 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import Stage from "./Components/stage";
 import confetti from "canvas-confetti";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Components/Home";
 
-function App() {
+const BirthdayAnime = () => {
   const [confettiStart, setConffetiStart] = useState(false);
 
   var colors = ["#8b5642", "#6a696b"];
@@ -49,6 +51,15 @@ function App() {
         frameHandler={(val) => frame(val)}
       />
     </div>
+  );
+};
+
+function App() {
+  return (
+    <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/greetings" element={<BirthdayAnime />} />
+    </Routes>
   );
 }
 

@@ -10,6 +10,7 @@ import cakeOne from "../Images/cakeOne.svg";
 const StageAnimation = (props) => {
   const [searchBar, setSearchBar] = useState(false);
   const [madeBy, setMadeBy] = useState(false);
+  const [showFlame, setShowFlame] = useState(true);
 
   const headingVariants = {
     hidden: { opacity: 0, scale: 1, y: 10 },
@@ -439,6 +440,222 @@ const StageAnimation = (props) => {
   const eightDivEightSvgControls = useAnimation();
   const eightDivNineSvgControls = useAnimation();
 
+  const postCandlesBlowAnimation = () => {
+    setShowFlame(false);
+    props.setConffetiStart(true);
+    wishOneControls.start("second").then(() => {
+      wishTwoControls.start("second").then(() => {
+        wishThreeControls.start("second").then(() => {
+          wishFourControls.start("second").then(() => {
+            wishFiveControls.start("second").then(() => {
+              wishSixControls.start("second").then(() => {
+                wishSevenControls.start("second").then(() => {
+                  wishEightControls.start("second").then(() => {
+                    wishNineControls.start("second").then(() => {
+                      wishTenControls.start("second").then(() => {
+                        wishElevenControls.start("second").then(() => {
+                          wishTwelveControls.start("second").then(() => {
+                            wishThirteenControls.start("second").then(() => {
+                              wishFourteenControls.start("second").then(() => {
+                                wishOneControls.start("third").then(() => {
+                                  wishTwoControls.start("third").then(() => {
+                                    wishThreeControls
+                                      .start("third")
+                                      .then(() => {
+                                        wishFourControls
+                                          .start("third")
+                                          .then(() => {
+                                            wishFiveControls
+                                              .start("third")
+                                              .then(() => {
+                                                wishSixControls
+                                                  .start("third")
+                                                  .then(() => {
+                                                    wishSevenControls
+                                                      .start("third")
+                                                      .then(() => {
+                                                        wishEightControls
+                                                          .start("third")
+                                                          .then(() => {
+                                                            wishNineControls
+                                                              .start("third")
+                                                              .then(() => {
+                                                                wishTenControls
+                                                                  .start(
+                                                                    "third"
+                                                                  )
+                                                                  .then(() => {
+                                                                    wishElevenControls
+                                                                      .start(
+                                                                        "third"
+                                                                      )
+                                                                      .then(
+                                                                        () => {
+                                                                          wishTwelveControls
+                                                                            .start(
+                                                                              "third"
+                                                                            )
+                                                                            .then(
+                                                                              () => {
+                                                                                wishThirteenControls
+                                                                                  .start(
+                                                                                    "third"
+                                                                                  )
+                                                                                  .then(
+                                                                                    () => {
+                                                                                      wishFourteenControls
+                                                                                        .start(
+                                                                                          "third"
+                                                                                        )
+                                                                                        .then(
+                                                                                          () => {
+                                                                                            // props.setConffetiStart(
+                                                                                            //   true
+                                                                                            // );
+                                                                                            setTimeout(
+                                                                                              () => {
+                                                                                                eightDivControls
+                                                                                                  .start(
+                                                                                                    "second"
+                                                                                                  )
+                                                                                                  .then(
+                                                                                                    () => {
+                                                                                                      eightDivFirstSvgControls.start(
+                                                                                                        "second"
+                                                                                                      );
+
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivSecondSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        500
+                                                                                                      );
+
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivThirdSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        1000
+                                                                                                      );
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivFourthSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        1500
+                                                                                                      );
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivFifthSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        2000
+                                                                                                      );
+
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivSixthSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        2500
+                                                                                                      );
+
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivSeventhSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        3000
+                                                                                                      );
+
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivEightSvgControls.start(
+                                                                                                            "second"
+                                                                                                          );
+                                                                                                        },
+                                                                                                        3500
+                                                                                                      );
+
+                                                                                                      setTimeout(
+                                                                                                        () => {
+                                                                                                          eightDivNineSvgControls
+                                                                                                            .start(
+                                                                                                              "second"
+                                                                                                            )
+                                                                                                            .then(
+                                                                                                              () => {
+                                                                                                                setTimeout(
+                                                                                                                  () => {
+                                                                                                                    eightDivControls.stop();
+                                                                                                                    cakeAnimationControls.start(
+                                                                                                                      "first"
+                                                                                                                    );
+                                                                                                                    div_7_controls.start(
+                                                                                                                      "notVisible"
+                                                                                                                    );
+                                                                                                                    setMadeBy(
+                                                                                                                      true
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                  500
+                                                                                                                );
+                                                                                                              }
+                                                                                                            );
+                                                                                                        },
+                                                                                                        4000
+                                                                                                      );
+                                                                                                    }
+                                                                                                  );
+
+                                                                                                console.log(
+                                                                                                  "Running at 503"
+                                                                                                );
+                                                                                              },
+                                                                                              5000
+                                                                                            );
+                                                                                          }
+                                                                                        );
+                                                                                    }
+                                                                                  );
+                                                                              }
+                                                                            );
+                                                                        }
+                                                                      );
+                                                                  });
+                                                              });
+                                                          });
+                                                      });
+                                                  });
+                                              });
+                                          });
+                                      });
+                                  });
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  };
+
   useEffect(() => {
     const sequence = () => {
       divOneControls.start("visible").then(() => {
@@ -528,343 +745,9 @@ const StageAnimation = (props) => {
                                                                                       )
                                                                                       .then(
                                                                                         () => {
-                                                                                          wishOneControls
-                                                                                            .start(
-                                                                                              "second"
-                                                                                            )
-                                                                                            .then(
-                                                                                              () => {
-                                                                                                wishTwoControls
-                                                                                                  .start(
-                                                                                                    "second"
-                                                                                                  )
-                                                                                                  .then(
-                                                                                                    () => {
-                                                                                                      wishThreeControls
-                                                                                                        .start(
-                                                                                                          "second"
-                                                                                                        )
-                                                                                                        .then(
-                                                                                                          () => {
-                                                                                                            wishFourControls
-                                                                                                              .start(
-                                                                                                                "second"
-                                                                                                              )
-                                                                                                              .then(
-                                                                                                                () => {
-                                                                                                                  wishFiveControls
-                                                                                                                    .start(
-                                                                                                                      "second"
-                                                                                                                    )
-                                                                                                                    .then(
-                                                                                                                      () => {
-                                                                                                                        wishSixControls
-                                                                                                                          .start(
-                                                                                                                            "second"
-                                                                                                                          )
-                                                                                                                          .then(
-                                                                                                                            () => {
-                                                                                                                              wishSevenControls
-                                                                                                                                .start(
-                                                                                                                                  "second"
-                                                                                                                                )
-                                                                                                                                .then(
-                                                                                                                                  () => {
-                                                                                                                                    wishEightControls
-                                                                                                                                      .start(
-                                                                                                                                        "second"
-                                                                                                                                      )
-                                                                                                                                      .then(
-                                                                                                                                        () => {
-                                                                                                                                          wishNineControls
-                                                                                                                                            .start(
-                                                                                                                                              "second"
-                                                                                                                                            )
-                                                                                                                                            .then(
-                                                                                                                                              () => {
-                                                                                                                                                wishTenControls
-                                                                                                                                                  .start(
-                                                                                                                                                    "second"
-                                                                                                                                                  )
-                                                                                                                                                  .then(
-                                                                                                                                                    () => {
-                                                                                                                                                      wishElevenControls
-                                                                                                                                                        .start(
-                                                                                                                                                          "second"
-                                                                                                                                                        )
-                                                                                                                                                        .then(
-                                                                                                                                                          () => {
-                                                                                                                                                            wishTwelveControls
-                                                                                                                                                              .start(
-                                                                                                                                                                "second"
-                                                                                                                                                              )
-                                                                                                                                                              .then(
-                                                                                                                                                                () => {
-                                                                                                                                                                  wishThirteenControls
-                                                                                                                                                                    .start(
-                                                                                                                                                                      "second"
-                                                                                                                                                                    )
-                                                                                                                                                                    .then(
-                                                                                                                                                                      () => {
-                                                                                                                                                                        wishFourteenControls
-                                                                                                                                                                          .start(
-                                                                                                                                                                            "second"
-                                                                                                                                                                          )
-                                                                                                                                                                          .then(
-                                                                                                                                                                            () => {
-                                                                                                                                                                              wishOneControls
-                                                                                                                                                                                .start(
-                                                                                                                                                                                  "third"
-                                                                                                                                                                                )
-                                                                                                                                                                                .then(
-                                                                                                                                                                                  () => {
-                                                                                                                                                                                    wishTwoControls
-                                                                                                                                                                                      .start(
-                                                                                                                                                                                        "third"
-                                                                                                                                                                                      )
-                                                                                                                                                                                      .then(
-                                                                                                                                                                                        () => {
-                                                                                                                                                                                          wishThreeControls
-                                                                                                                                                                                            .start(
-                                                                                                                                                                                              "third"
-                                                                                                                                                                                            )
-                                                                                                                                                                                            .then(
-                                                                                                                                                                                              () => {
-                                                                                                                                                                                                wishFourControls
-                                                                                                                                                                                                  .start(
-                                                                                                                                                                                                    "third"
-                                                                                                                                                                                                  )
-                                                                                                                                                                                                  .then(
-                                                                                                                                                                                                    () => {
-                                                                                                                                                                                                      wishFiveControls
-                                                                                                                                                                                                        .start(
-                                                                                                                                                                                                          "third"
-                                                                                                                                                                                                        )
-                                                                                                                                                                                                        .then(
-                                                                                                                                                                                                          () => {
-                                                                                                                                                                                                            wishSixControls
-                                                                                                                                                                                                              .start(
-                                                                                                                                                                                                                "third"
-                                                                                                                                                                                                              )
-                                                                                                                                                                                                              .then(
-                                                                                                                                                                                                                () => {
-                                                                                                                                                                                                                  wishSevenControls
-                                                                                                                                                                                                                    .start(
-                                                                                                                                                                                                                      "third"
-                                                                                                                                                                                                                    )
-                                                                                                                                                                                                                    .then(
-                                                                                                                                                                                                                      () => {
-                                                                                                                                                                                                                        wishEightControls
-                                                                                                                                                                                                                          .start(
-                                                                                                                                                                                                                            "third"
-                                                                                                                                                                                                                          )
-                                                                                                                                                                                                                          .then(
-                                                                                                                                                                                                                            () => {
-                                                                                                                                                                                                                              wishNineControls
-                                                                                                                                                                                                                                .start(
-                                                                                                                                                                                                                                  "third"
-                                                                                                                                                                                                                                )
-                                                                                                                                                                                                                                .then(
-                                                                                                                                                                                                                                  () => {
-                                                                                                                                                                                                                                    wishTenControls
-                                                                                                                                                                                                                                      .start(
-                                                                                                                                                                                                                                        "third"
-                                                                                                                                                                                                                                      )
-                                                                                                                                                                                                                                      .then(
-                                                                                                                                                                                                                                        () => {
-                                                                                                                                                                                                                                          wishElevenControls
-                                                                                                                                                                                                                                            .start(
-                                                                                                                                                                                                                                              "third"
-                                                                                                                                                                                                                                            )
-                                                                                                                                                                                                                                            .then(
-                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                wishTwelveControls
-                                                                                                                                                                                                                                                  .start(
-                                                                                                                                                                                                                                                    "third"
-                                                                                                                                                                                                                                                  )
-                                                                                                                                                                                                                                                  .then(
-                                                                                                                                                                                                                                                    () => {
-                                                                                                                                                                                                                                                      wishThirteenControls
-                                                                                                                                                                                                                                                        .start(
-                                                                                                                                                                                                                                                          "third"
-                                                                                                                                                                                                                                                        )
-                                                                                                                                                                                                                                                        .then(
-                                                                                                                                                                                                                                                          () => {
-                                                                                                                                                                                                                                                            wishFourteenControls
-                                                                                                                                                                                                                                                              .start(
-                                                                                                                                                                                                                                                                "third"
-                                                                                                                                                                                                                                                              )
-                                                                                                                                                                                                                                                              .then(
-                                                                                                                                                                                                                                                                () => {
-                                                                                                                                                                                                                                                                  props.setConffetiStart(
-                                                                                                                                                                                                                                                                    true
-                                                                                                                                                                                                                                                                  );
-                                                                                                                                                                                                                                                                  setTimeout(
-                                                                                                                                                                                                                                                                    () => {
-                                                                                                                                                                                                                                                                      eightDivControls
-                                                                                                                                                                                                                                                                        .start(
-                                                                                                                                                                                                                                                                          "second"
-                                                                                                                                                                                                                                                                        )
-                                                                                                                                                                                                                                                                        .then(
-                                                                                                                                                                                                                                                                          () => {
-                                                                                                                                                                                                                                                                            eightDivFirstSvgControls.start(
-                                                                                                                                                                                                                                                                              "second"
-                                                                                                                                                                                                                                                                            );
-
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivSecondSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              500
-                                                                                                                                                                                                                                                                            );
-
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivThirdSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              1000
-                                                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivFourthSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              1500
-                                                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivFifthSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              2000
-                                                                                                                                                                                                                                                                            );
-
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivSixthSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              2500
-                                                                                                                                                                                                                                                                            );
-
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivSeventhSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              3000
-                                                                                                                                                                                                                                                                            );
-
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivEightSvgControls.start(
-                                                                                                                                                                                                                                                                                  "second"
-                                                                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              3500
-                                                                                                                                                                                                                                                                            );
-
-                                                                                                                                                                                                                                                                            setTimeout(
-                                                                                                                                                                                                                                                                              () => {
-                                                                                                                                                                                                                                                                                eightDivNineSvgControls
-                                                                                                                                                                                                                                                                                  .start(
-                                                                                                                                                                                                                                                                                    "second"
-                                                                                                                                                                                                                                                                                  )
-                                                                                                                                                                                                                                                                                  .then(
-                                                                                                                                                                                                                                                                                    () => {
-                                                                                                                                                                                                                                                                                      setTimeout(
-                                                                                                                                                                                                                                                                                        () => {
-                                                                                                                                                                                                                                                                                          eightDivControls.stop();
-                                                                                                                                                                                                                                                                                          cakeAnimationControls.start(
-                                                                                                                                                                                                                                                                                            "first"
-                                                                                                                                                                                                                                                                                          );
-                                                                                                                                                                                                                                                                                          div_7_controls.start(
-                                                                                                                                                                                                                                                                                            "notVisible"
-                                                                                                                                                                                                                                                                                          );
-                                                                                                                                                                                                                                                                                          setMadeBy(
-                                                                                                                                                                                                                                                                                            true
-                                                                                                                                                                                                                                                                                          );
-                                                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                                                        500
-                                                                                                                                                                                                                                                                                      );
-                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                  );
-                                                                                                                                                                                                                                                                              },
-                                                                                                                                                                                                                                                                              4000
-                                                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                        );
-
-                                                                                                                                                                                                                                                                      console.log(
-                                                                                                                                                                                                                                                                        "Running at 503"
-                                                                                                                                                                                                                                                                      );
-                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                    5000
-                                                                                                                                                                                                                                                                  );
-                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                              );
-                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                        );
-                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                  );
-                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                            );
-                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                      );
-                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                );
-                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                          );
-                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                    );
-                                                                                                                                                                                                                }
-                                                                                                                                                                                                              );
-                                                                                                                                                                                                          }
-                                                                                                                                                                                                        );
-                                                                                                                                                                                                    }
-                                                                                                                                                                                                  );
-                                                                                                                                                                                              }
-                                                                                                                                                                                            );
-                                                                                                                                                                                        }
-                                                                                                                                                                                      );
-                                                                                                                                                                                  }
-                                                                                                                                                                                );
-                                                                                                                                                                            }
-                                                                                                                                                                          );
-                                                                                                                                                                      }
-                                                                                                                                                                    );
-                                                                                                                                                                }
-                                                                                                                                                              );
-                                                                                                                                                          }
-                                                                                                                                                        );
-                                                                                                                                                    }
-                                                                                                                                                  );
-                                                                                                                                              }
-                                                                                                                                            );
-                                                                                                                                        }
-                                                                                                                                      );
-                                                                                                                                  }
-                                                                                                                                );
-                                                                                                                            }
-                                                                                                                          );
-                                                                                                                      }
-                                                                                                                    );
-                                                                                                                }
-                                                                                                              );
-                                                                                                          }
-                                                                                                        );
-                                                                                                    }
-                                                                                                  );
-                                                                                              }
-                                                                                            );
+                                                                                          console.log(
+                                                                                            "END"
+                                                                                          );
                                                                                         }
                                                                                       );
                                                                                   }
@@ -902,7 +785,7 @@ const StageAnimation = (props) => {
     sequence();
   }, [divOneControls, divTwoControls]);
 
-  const name = "Amrita";
+  const name = "Lydia";
 
   return (
     <>
@@ -1280,7 +1163,9 @@ const StageAnimation = (props) => {
           <div class="cake-middle"></div>
           <div class="cake-top"></div>
           <div class="candle"></div>
-          <div class="flame"></div>
+          {showFlame && (
+            <div class="flame" onClick={postCandlesBlowAnimation}></div>
+          )}
           <div class="shadow"></div>
         </motion.div>
         {/* )} */}
