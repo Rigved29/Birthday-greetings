@@ -1,9 +1,13 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const userNameRef = useRef();
   const birthdayPersonNameRef = useRef();
+
+  const [birthdayPersonData, setBirthdayPersonData] = useState("");
+  const [showLink, setShowLink] = useState(false);
 
   const generateLinkHandler = () => {
     const config = {
@@ -16,12 +20,14 @@ const Home = () => {
         userName: userNameRef.current.value,
         birthdayPersonName: birthdayPersonNameRef.current.value,
       },
-      withCredentials: true,
+      // withCredentials: true,
     };
 
     axios(config)
       .then((res) => {
         console.log(res);
+        setBirthdayPersonData(res.data);
+        setShowLink(true);
       })
       .catch((err) => {
         console.log("ERROR", err);
@@ -41,6 +47,13 @@ const Home = () => {
           Submit
         </button>
       </form>
+      {showLink && (
+        <h3>
+          <Link
+            to={`greetings/${birthdayPersonData._id}`}
+          >{`http://localhost:3000/${birthdayPersonData._id}`}</Link>
+        </h3>
+      )}
     </div>
   );
 };

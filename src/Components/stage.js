@@ -785,7 +785,7 @@ const StageAnimation = (props) => {
     sequence();
   }, [divOneControls, divTwoControls]);
 
-  const name = "Lydia";
+  const name = props.name !== "" ? props.name : "Lydia";
 
   return (
     <>
