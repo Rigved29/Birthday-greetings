@@ -22,8 +22,8 @@ const Home = () => {
     const config = {
       method: "POST",
       // url: "http://localhost:8000/userlink",
-      // url: `${process.env.REACT_APP_API_URL}/userlink`,
-      url: `/userlink`,
+      url: `${process.env.REACT_APP_API_URL}userlink`,
+      // url: `/userlink`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -127,14 +127,14 @@ const Home = () => {
         {showLink && (
           <div className="linkDiv">
             <Link
-              to={`greetings/${birthdayPersonData._id}`}
+              to={`https://birthday-wish-alpha.vercel.app/greetings/${birthdayPersonData._id}`}
               className="shareLink"
-            >{`/greetings/${birthdayPersonData._id}`}</Link>
+            >{`https://birthday-wish-alpha.vercel.app/greetings/${birthdayPersonData._id}`}</Link>
             <span
               className="copyBtn"
               onClick={() => {
                 navigator.clipboard.writeText(
-                  `/greetings/${birthdayPersonData._id}`
+                  `https://birthday-wish-alpha.vercel.app/greetings/${birthdayPersonData._id}`
                 );
                 setCopiedState(true);
               }}

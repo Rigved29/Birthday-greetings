@@ -51,11 +51,13 @@ const BirthdayAnime = () => {
   useEffect(() => {
     console.log("USERID", userId);
 
+    console.log(process.env.REACT_APP_API_URL);
+
     const config = {
       method: "GET",
       // url: `http://localhost:8000/userInfo/${userId}`,
-      // url: `${process.env.REACT_APP_API_URL}/userInfo/${userId}`,
-      url: `/userInfo/${userId}`,
+      url: `${process.env.REACT_APP_API_URL}/userInfo/${userId}`,
+      // url: `/userInfo/${userId}`,
       headers: {
         "Content-Type": "application/json",
       },
