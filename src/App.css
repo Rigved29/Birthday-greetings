@@ -8,6 +8,11 @@
   margin: 0;
   /* padding-inline: 10px; */
   box-sizing: border-box;
+  
+}
+
+.App .errorDiv{
+  margin-top: 20%;
 }
 
 .search-bar{

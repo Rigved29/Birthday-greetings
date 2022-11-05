@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 const BirthdayAnime = () => {
   const [confettiStart, setConffetiStart] = useState(false);
   const [birthdayPersonName, setBirthdayPersonName] = useState("");
+  const [error, setError] = useState("");
 
   var colors = ["#8b5642", "#6a696b"];
 
@@ -52,30 +53,55 @@ const BirthdayAnime = () => {
 
     const config = {
       method: "GET",
-      url: `http://localhost:8000/userInfo/${userId}`,
+      // url: `http://localhost:8000/userInfo/${userId}`,
+      url: `${process.env.REACT_APP_API_URL}/userInfo/${userId}`,
       headers: {
         "Content-Type": "application/json",
       },
     };
 
+    let resStatus;
+
     axios(config)
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
+          resStatus = res.status;
           setBirthdayPersonName(res.data.birthdayPersonName);
+          setError("");
+        } else if (res.status === 404) {
+          resStatus = res.status;
+          setError("not found");
         }
+        console.log(resStatus);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setError("not found");
+        console.log(err);
+      });
   }, []);
+
+  console.log("Error87", error);
 
   return (
     <div className="App">
-      <Stage
-        setConffetiStart={(value) => setConffetiStart(value)}
-        confettiStart={confettiStart}
-        frameHandler={(val) => frame(val)}
-        name={birthdayPersonName}
-      />
+      {error === "" ? (
+        <Stage
+          setConffetiStart={(value) => setConffetiStart(value)}
+          confettiStart={confettiStart}
+          frameHandler={(val) => frame(val)}
+          name={birthdayPersonName}
+        />
+      ) : (
+        <div className="errorDiv">
+          <h1>404</h1>
+          <p className="error">
+            No birthday person found with these credentials..😔
+          </p>
+        </div>
+
+        // <img src={errorImg} alt="error" className="errorImg" />
+      )}
     </div>
   );
 };

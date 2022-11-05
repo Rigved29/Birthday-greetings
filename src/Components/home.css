@@ -1,0 +1,133 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+
+
+
+.headline-div{
+    margin-top: 2rem;
+    margin-left: 8rem;
+
+}
+
+.headline-div .headline{
+
+    color: #ac3b61;
+    font-family: 'Comic Neue', cursive;
+    font-size: 4rem;
+    margin-block:0;
+
+}
+
+.headline-div :nth-child(2){
+  margin-left: 5rem;
+}
+
+.home{
+    margin-top: 5rem;
+}
+
+.home form{
+    max-width: fit-content;
+    height: auto;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:1.5rem;
+    border: 0.125rem solid transparent;
+    border-radius: 0.25rem;
+    background-color: ghostwhite;
+
+}
+
+.home form h2{
+    text-align: center;
+    color: #123c69;
+    font-family: "Work Sans", sans-serif;
+}
+
+.home form input {
+    
+    width: 20rem;
+    padding: 0.5rem;
+    outline: none;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    border: 2px solid transparent;
+    margin-inline: auto;
+}
+
+.home form input:focus{
+    border: 2px solid #123c69;
+    background-color: #f4f5f8;
+}
+
+.home form button {
+    
+    width: 21.25rem;
+    padding: 0.5rem;
+    outline: none;
+    margin-top: 1rem;
+    margin-inline: auto;
+    color: white;
+    background-color: #123c69;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.home form button:disabled{
+    background-color: #4e8ed3;
+    cursor: not-allowed;
+}
+
+.home form .error{
+  color: rgb(214, 27, 27);
+}
+
+.linkDiv{
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-top: 2rem;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    padding-block: 0.5rem;
+    padding-inline: 0.7rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-inline: auto;
+    background-color: ghostwhite;
+    
+}
+
+.linkDiv .shareLink{
+
+
+    color: rgb(46, 45, 45);
+
+}
+
+.linkDiv .copyBtn{
+
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    border: 0 solid transparent;
+    border-radius: 4px;
+    /* background-color: white; */
+    cursor: pointer;
+    background: linear-gradient(to right, white 50%, #123c69 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    transition:all 0.5s ease;
+    
+
+}
+
+.linkDiv .copyBtn:hover{
+    background-position:right bottom;
+    color: white;
+}
+
