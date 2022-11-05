@@ -18,10 +18,12 @@ const Home = () => {
   const [error2, setError2] = useState(true);
 
   const generateLinkHandler = () => {
+    console.log(process.env.REACT_APP_API_URL);
     const config = {
       method: "POST",
       // url: "http://localhost:8000/userlink",
-      url: `${process.env.REACT_APP_API_URL}/userlink`,
+      // url: `${process.env.REACT_APP_API_URL}/userlink`,
+      url: `/userlink`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -127,12 +129,12 @@ const Home = () => {
             <Link
               to={`greetings/${birthdayPersonData._id}`}
               className="shareLink"
-            >{`${process.env.REACT_APP_API_URL}/greetings/${birthdayPersonData._id}`}</Link>
+            >{`/greetings/${birthdayPersonData._id}`}</Link>
             <span
               className="copyBtn"
               onClick={() => {
                 navigator.clipboard.writeText(
-                  `${process.env.REACT_APP_API_URL}/greetings/${birthdayPersonData._id}`
+                  `/greetings/${birthdayPersonData._id}`
                 );
                 setCopiedState(true);
               }}
