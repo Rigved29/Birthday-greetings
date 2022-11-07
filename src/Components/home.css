@@ -1,7 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
-
+.home-main{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 
 .headline-div{
@@ -100,6 +103,7 @@
     border-radius: 4px;
     margin-inline: auto;
     background-color: ghostwhite;
+    font-size: 1rem;
     
 }
 
@@ -131,3 +135,35 @@
     color: white;
 }
 
+@media screen and (max-width: 500px) {
+
+      .headline-div .headline{
+        font-size: 2rem;
+      }
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+    .headline-div{
+        margin-top: 2rem;
+        margin-left: 1rem;
+    
+    }
+
+   
+    .headline-div :nth-child(2){
+        margin-left: 2.5rem;
+      }   
+
+      .linkDiv{
+        font-size: 0.8rem;
+      }
+
+
+}
+
+.errorDiv h1,.errorDiv p{
+    text-align: center;
+}

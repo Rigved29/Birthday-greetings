@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Loader from "./Components/Loader";
 
 const BirthdayAnime = () => {
   const [confettiStart, setConffetiStart] = useState(false);
@@ -89,12 +90,18 @@ const BirthdayAnime = () => {
   return (
     <div className="App">
       {error === "" ? (
-        <Stage
-          setConffetiStart={(value) => setConffetiStart(value)}
-          confettiStart={confettiStart}
-          frameHandler={(val) => frame(val)}
-          name={birthdayPersonName}
-        />
+        birthdayPersonName !== "" ? (
+          <Stage
+            setConffetiStart={(value) => setConffetiStart(value)}
+            confettiStart={confettiStart}
+            frameHandler={(val) => frame(val)}
+            name={birthdayPersonName}
+          />
+        ) : (
+          <div className="stageLoader">
+            <Loader />
+          </div>
+        )
       ) : (
         <div className="errorDiv">
           <h1>404</h1>
@@ -102,8 +109,6 @@ const BirthdayAnime = () => {
             No birthday person found with these credentials..😔
           </p>
         </div>
-
-        // <img src={errorImg} alt="error" className="errorImg" />
       )}
     </div>
   );

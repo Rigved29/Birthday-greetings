@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import "./home.css";
 import { ReactComponent as Tick } from "../Images/tick.svg";
 
+//component
+import Loader from "./Loader";
+
 const Home = () => {
   const userNameRef = useRef();
   const birthdayPersonNameRef = useRef();
@@ -16,9 +19,12 @@ const Home = () => {
   const [birthdayPersonNameError, setBirthdayPersonNameError] = useState("");
   const [error1, setError1] = useState(true);
   const [error2, setError2] = useState(true);
+  const [hideLoader, setHideLoader] = useState(false);
+  const [resError, setResError] = useState(false);
 
   const generateLinkHandler = () => {
     console.log(process.env.REACT_APP_API_URL);
+
     const config = {
       method: "POST",
       // url: "http://localhost:8000/userlink",
@@ -39,18 +45,20 @@ const Home = () => {
         console.log(res);
         setBirthdayPersonData(res.data);
         setShowLink(true);
+        userNameRef.current.value = "";
+        birthdayPersonNameRef.current.value = "";
+        setResError(false);
+        setError1(true);
+        setError2(true);
       })
       .catch((err) => {
         console.log("ERROR", err);
+        setShowLink(false);
+        setResError(true);
       });
   };
 
   console.log(process.env.REACT_APP_API_URL);
-
-  // console.log(
-  //   userNameRef.current.value.length,
-  //   birthdayPersonNameRef.current.value.length
-  // );
 
   useEffect(() => {}, [userNameRef, birthdayPersonNameRef]);
 
@@ -69,6 +77,15 @@ const Home = () => {
       setError1(false);
     }
   };
+
+  useEffect(() => {
+    if (showLink) {
+      setTimeout(() => {
+        setHideLoader(true);
+        console.log("running");
+      }, 3000);
+    }
+  }, [showLink]);
 
   const checkBirthdayPersonNameError = () => {
     if (birthdayPersonNameRef.current.value.length === 0) {
@@ -124,24 +141,43 @@ const Home = () => {
             Submit
           </button>
         </motion.form>
-        {showLink && (
-          <div className="linkDiv">
-            <Link
-              to={`https://birthday-wish-alpha.vercel.app/greetings/${birthdayPersonData._id}`}
-              className="shareLink"
-            >{`https://birthday-wish-alpha.vercel.app/greetings/${birthdayPersonData._id}`}</Link>
-            <span
-              className="copyBtn"
-              onClick={() => {
-                navigator.clipboard.writeText(
-                  `https://birthday-wish-alpha.vercel.app/greetings/${birthdayPersonData._id}`
-                );
-                setCopiedState(true);
+        {showLink ? (
+          hideLoader ? (
+            <motion.div
+              className="linkDiv"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+                transition: { duration: 0.5, type: "tween" },
               }}
             >
-              {copiedState ? <Tick /> : "copy"}
-            </span>
-          </div>
+              <Link
+                to={`/greetings/${birthdayPersonData._id}`}
+                className="shareLink"
+              >{`${process.env.REACT_APP_HOST}/greetings/${birthdayPersonData._id}`}</Link>
+              <span
+                className="copyBtn"
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    `${process.env.REACT_APP_HOST}/greetings/${birthdayPersonData._id}`
+                  );
+                  setCopiedState(true);
+                }}
+              >
+                {copiedState ? <Tick /> : "copy"}
+              </span>
+            </motion.div>
+          ) : (
+            <Loader />
+          )
+        ) : (
+          resError && (
+            <div className="errorDiv">
+              <h1>ERROR</h1>
+              <p className="error">check your internet connection..😔</p>
+            </div>
+          )
         )}
       </div>
     </main>

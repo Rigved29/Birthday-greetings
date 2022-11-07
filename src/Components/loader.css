@@ -1,0 +1,15 @@
+.loaderDiv{
+        display: flex;
+        margin-block: 2rem;
+        justify-content: center;
+}
+
+ 
+ .loaderDiv .dot{
+    
+        width: 0.4rem;
+        height: 0.4rem;
+        background: #ac3b61;
+        border-radius: 1rem;
+        margin: 0.3rem;
+}

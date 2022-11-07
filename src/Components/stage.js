@@ -441,7 +441,7 @@ const StageAnimation = (props) => {
   const eightDivNineSvgControls = useAnimation();
 
   const postCandlesBlowAnimation = () => {
-    setShowFlame(false);
+    // setShowFlame(false);
     props.setConffetiStart(true);
     wishOneControls.start("second").then(() => {
       wishTwoControls.start("second").then(() => {
@@ -748,6 +748,7 @@ const StageAnimation = (props) => {
                                                                                           console.log(
                                                                                             "END"
                                                                                           );
+                                                                                          postCandlesBlowAnimation();
                                                                                         }
                                                                                       );
                                                                                   }
@@ -1163,9 +1164,7 @@ const StageAnimation = (props) => {
           <div class="cake-middle"></div>
           <div class="cake-top"></div>
           <div class="candle"></div>
-          {showFlame && (
-            <div class="flame" onClick={postCandlesBlowAnimation}></div>
-          )}
+          {showFlame && <div class="flame"></div>}
           <div class="shadow"></div>
         </motion.div>
         {/* )} */}

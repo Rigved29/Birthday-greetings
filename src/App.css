@@ -15,6 +15,10 @@
   margin-top: 20%;
 }
 
+.App .stageLoader{
+  margin-top: 30%;
+}
+
 .search-bar{
 
   border: 2px solid #D3D3D3;
@@ -873,7 +877,7 @@ h1 .caption {
 
 @media screen and (max-width: 450px) {
   .search-bar {
-    width: 20rem;
+    width: 25rem;
     font-size: 10px;
   }
 }
