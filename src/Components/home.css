@@ -91,6 +91,7 @@
 
 .linkDiv{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 0.7rem;
     margin-top: 2rem;
@@ -140,6 +141,22 @@
       .headline-div .headline{
         font-size: 2rem;
       }
+
+     
+
+}
+
+
+@media screen and (max-width: 430px) {
+
+
+    .linkDiv{
+       max-width: 80%;
+    }
+
+    .linkDiv .copyBtn{
+      width: 80%;
+   }
 
 }
 

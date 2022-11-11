@@ -156,6 +156,7 @@ const Home = () => {
                 to={`/greetings/${birthdayPersonData._id}`}
                 className="shareLink"
               >{`${process.env.REACT_APP_HOST}/greetings/${birthdayPersonData._id}`}</Link>
+
               <span
                 className="copyBtn"
                 onClick={() => {
