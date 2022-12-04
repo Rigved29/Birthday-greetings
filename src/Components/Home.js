@@ -32,12 +32,13 @@ const Home = () => {
       // url: `/userlink`,
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
       },
       data: {
         userName: userNameRef.current.value,
         birthdayPersonName: birthdayPersonNameRef.current.value,
       },
-      withCredentials: true,
+      // withCredentials: true,
     };
 
     axios(config)
