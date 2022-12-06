@@ -32,7 +32,7 @@ const Home = () => {
       // url: `/userlink`,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
+        // "Access-Control-Allow-Credentials": true,
       },
       data: {
         userName: userNameRef.current.value,
