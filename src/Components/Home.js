@@ -38,7 +38,7 @@ const Home = () => {
         userName: userNameRef.current.value,
         birthdayPersonName: birthdayPersonNameRef.current.value,
       },
-      withCredentials: true,
+      // withCredentials: true,
     };
 
     axios(config)
