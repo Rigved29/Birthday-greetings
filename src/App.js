@@ -10,7 +10,7 @@ import Loader from "./Components/Loader";
 
 const BirthdayAnime = () => {
   const [confettiStart, setConffetiStart] = useState(false);
-  const [birthdayPersonName, setBirthdayPersonName] = useState("");
+  const [birthdayPersonName, setBirthdayPersonName] = useState("Priya");
   const [error, setError] = useState("");
 
   var colors = ["#8b5642", "#6a696b"];
@@ -38,7 +38,7 @@ const BirthdayAnime = () => {
     }
   }
 
-  // window.onload = frame();
+  window.onload = frame();
 
   useEffect(() => {
     if (confettiStart) {
@@ -119,6 +119,7 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/greetings/:id" element={<BirthdayAnime />} />
+      {/* <Route exact path="/" element={<BirthdayAnime />} /> */}
     </Routes>
   );
 }
