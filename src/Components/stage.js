@@ -810,7 +810,7 @@ const StageAnimation = (props) => {
               transition={{ delay: 0.5, duration: 2.5 }}
               variants={captionVariants}
             >
-              {` I know it's little late to wish you..it's almost 12 noon`}
+              {` I know it's little late to wish you..`}
             </motion.p>
           </motion.h1>
         </AnimatePresence>

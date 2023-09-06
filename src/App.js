@@ -10,7 +10,7 @@ import Loader from "./Components/Loader";
 
 const BirthdayAnime = () => {
   const [confettiStart, setConffetiStart] = useState(false);
-  const [birthdayPersonName, setBirthdayPersonName] = useState("Priya");
+  const [birthdayPersonName, setBirthdayPersonName] = useState("");
   const [error, setError] = useState("");
 
   var colors = ["#8b5642", "#6a696b"];
@@ -38,19 +38,17 @@ const BirthdayAnime = () => {
     }
   }
 
-  window.onload = frame();
+  // window.onload = frame();
 
   useEffect(() => {
     if (confettiStart) {
       frame();
-      console.log("running");
     }
   }, [confettiStart]);
 
   const { id: userId } = useParams();
 
   useEffect(() => {
-    console.log("USERID", userId);
 
     console.log(process.env.REACT_APP_API_URL);
 
@@ -68,7 +66,6 @@ const BirthdayAnime = () => {
 
     axios(config)
       .then((res) => {
-        console.log(res);
         if (res.status === 200) {
           resStatus = res.status;
           setBirthdayPersonName(res.data.birthdayPersonName);
@@ -77,15 +74,13 @@ const BirthdayAnime = () => {
           resStatus = res.status;
           setError("not found");
         }
-        console.log(resStatus);
       })
       .catch((err) => {
         setError("not found");
-        console.log(err);
+
       });
   }, []);
 
-  console.log("Error87", error);
 
   return (
     <div className="App">

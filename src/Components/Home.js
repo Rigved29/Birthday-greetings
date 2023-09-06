@@ -43,7 +43,6 @@ const Home = () => {
 
     axios(config)
       .then((res) => {
-        console.log(res);
         setBirthdayPersonData(res.data);
         setShowLink(true);
         userNameRef.current.value = "";
@@ -59,9 +58,8 @@ const Home = () => {
       });
   };
 
-  console.log(process.env.REACT_APP_API_URL);
 
-  useEffect(() => {}, [userNameRef, birthdayPersonNameRef]);
+  useEffect(() => { }, [userNameRef, birthdayPersonNameRef]);
 
   const checkUserNameError = () => {
     if (userNameRef.current.value.length === 0) {
@@ -83,7 +81,6 @@ const Home = () => {
     if (showLink) {
       setTimeout(() => {
         setHideLoader(true);
-        console.log("running");
       }, 3000);
     }
   }, [showLink]);
