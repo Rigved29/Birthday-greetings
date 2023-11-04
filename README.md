@@ -22,9 +22,6 @@ With the help of this project you can wish your firends birthday in a different 
 Insert gif or link to demo
 
 birthday-wish-alpha.vercel.app
-## 🚀 About Me
-I'm a full stack developer...
-
 
 ## Tech Stack
 
