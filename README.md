@@ -3,7 +3,7 @@
 
 Wish your loved ones on birthday in a nerdy way.
 
-With the help of this project you can wish your firends birthday in a different way. You just need to submit name of your friend/relative whom you want to wish then a link will be generated which you can share with them. That link will open a birthday animation with their name.
+With the help of this project you can wish your friends birthday in a different way. You just need to submit name of your friend/relative whom you want to wish then a link will be generated which you can share with them. That link will open a birthday animation with their name.
 
 
 ## Acknowledgements
