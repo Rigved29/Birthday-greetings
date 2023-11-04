@@ -28,7 +28,7 @@ I'm a full stack developer...
 
 ## Tech Stack
 
-**Client:** React, rect-router, framer-motion
+**Client:** React, react-router, framer-motion
 
 **Server:** Node, Express
 
